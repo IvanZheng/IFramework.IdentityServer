@@ -1,0 +1,87 @@
+2019-08-29 15:40:32.611 +08:00 [ERR] An unhandled exception has occurred while executing the request.
+System.Threading.Tasks.TaskCanceledException: The operation was canceled. ---> System.IO.IOException: Unable to read data from the transport connection: The I/O operation has been aborted because of either a thread exit or an application request. ---> System.Net.Sockets.SocketException: The I/O operation has been aborted because of either a thread exit or an application request
+   --- End of inner exception stack trace ---
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.GetResult(Int16 token)
+   at System.Net.Http.HttpConnection.FillAsync()
+   at System.Net.Http.HttpConnection.ReadNextResponseHeaderLineAsync(Boolean foldedHeadersAllowed)
+   at System.Net.Http.HttpConnection.SendAsyncCore(HttpRequestMessage request, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnection.SendAsyncCore(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithNtConnectionAuthAsync(HttpConnection connection, HttpRequestMessage request, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithRetryAsync(HttpRequestMessage request, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.FinishSendAsyncBuffered(Task`1 sendTask, HttpRequestMessage request, CancellationTokenSource cts, Boolean disposeCts)
+   at MvcClient.Controllers.HomeController.CallApi() in E:\Source\Repos\IdentityServer4\samples\Quickstarts\9_Combined_AspId_and_EFStorage\src\MvcClient\Controllers\HomeController.cs:line 45
+   at Microsoft.AspNetCore.Mvc.Internal.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at System.Threading.Tasks.ValueTask`1.get_Result()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeNextActionFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2019-08-29 15:57:38.425 +08:00 [INF] AuthenticationScheme: Cookies signed out.
+2019-08-29 15:57:38.497 +08:00 [INF] AuthenticationScheme: oidc signed out.
+2019-08-29 15:57:44.332 +08:00 [INF] AuthenticationScheme: oidc was challenged.
+2019-08-29 15:57:48.318 +08:00 [INF] AuthenticationScheme: Cookies signed in.
+2019-08-29 16:06:41.419 +08:00 [INF] AuthenticationScheme: Cookies signed out.
+2019-08-29 16:06:41.500 +08:00 [INF] AuthenticationScheme: oidc signed out.
+2019-08-29 16:06:49.808 +08:00 [INF] AuthenticationScheme: oidc was challenged.
+2019-08-29 16:06:55.716 +08:00 [INF] AuthenticationScheme: Cookies signed in.
+2019-08-29 16:08:52.523 +08:00 [INF] AuthenticationScheme: Cookies signed out.
+2019-08-29 16:08:52.609 +08:00 [INF] AuthenticationScheme: oidc signed out.
+2019-08-29 16:08:57.885 +08:00 [INF] AuthenticationScheme: oidc was challenged.
+2019-08-29 16:09:01.478 +08:00 [INF] AuthenticationScheme: Cookies signed in.
+2019-08-29 16:09:48.162 +08:00 [INF] AuthenticationScheme: Cookies signed out.
+2019-08-29 16:09:48.163 +08:00 [INF] AuthenticationScheme: oidc signed out.
+2019-08-29 16:09:50.713 +08:00 [INF] AuthenticationScheme: oidc was challenged.
+2019-08-29 16:09:55.501 +08:00 [INF] AuthenticationScheme: Cookies signed in.
+2019-08-29 16:10:21.009 +08:00 [INF] AuthenticationScheme: Cookies signed out.
+2019-08-29 16:10:21.010 +08:00 [INF] AuthenticationScheme: oidc signed out.
+2019-08-29 16:10:23.193 +08:00 [INF] AuthenticationScheme: oidc was challenged.
+2019-08-29 16:10:32.356 +08:00 [INF] AuthenticationScheme: Cookies signed in.
+2020-02-24 16:12:06.062 +08:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: IDX20803: Unable to obtain configuration from: 'http://localhost:5000/.well-known/openid-configuration'. ---> System.IO.IOException: IDX20804: Unable to retrieve document from: 'http://localhost:5000/.well-known/openid-configuration'. ---> System.Net.Http.HttpRequestException: No connection could be made because the target machine actively refused it ---> System.Net.Sockets.SocketException: No connection could be made because the target machine actively refused it
+   at System.Net.Http.ConnectHelper.ConnectAsync(String host, Int32 port, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.ConnectHelper.ConnectAsync(String host, Int32 port, CancellationToken cancellationToken)
+   at System.Threading.Tasks.ValueTask`1.get_Result()
+   at System.Net.Http.HttpConnectionPool.CreateConnectionAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Threading.Tasks.ValueTask`1.get_Result()
+   at System.Net.Http.HttpConnectionPool.WaitForCreatedConnectionAsync(ValueTask`1 creationTask)
+   at System.Threading.Tasks.ValueTask`1.get_Result()
+   at System.Net.Http.HttpConnectionPool.SendWithRetryAsync(HttpRequestMessage request, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.FinishSendAsyncBuffered(Task`1 sendTask, HttpRequestMessage request, CancellationTokenSource cts, Boolean disposeCts)
+   at Microsoft.IdentityModel.Protocols.HttpDocumentRetriever.GetDocumentAsync(String address, CancellationToken cancel)
+   --- End of inner exception stack trace ---
+   at Microsoft.IdentityModel.Protocols.HttpDocumentRetriever.GetDocumentAsync(String address, CancellationToken cancel)
+   at Microsoft.IdentityModel.Protocols.OpenIdConnect.OpenIdConnectConfigurationRetriever.GetAsync(String address, IDocumentRetriever retriever, CancellationToken cancel)
+   at Microsoft.IdentityModel.Protocols.ConfigurationManager`1.GetConfigurationAsync(CancellationToken cancel)
+   --- End of inner exception stack trace ---
+   at Microsoft.IdentityModel.Protocols.ConfigurationManager`1.GetConfigurationAsync(CancellationToken cancel)
+   at Microsoft.AspNetCore.Authentication.OpenIdConnect.OpenIdConnectHandler.HandleChallengeAsync(AuthenticationProperties properties)
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandler`1.ChallengeAsync(AuthenticationProperties properties)
+   at Microsoft.AspNetCore.Authentication.AuthenticationService.ChallengeAsync(HttpContext context, String scheme, AuthenticationProperties properties)
+   at Microsoft.AspNetCore.Mvc.ChallengeResult.ExecuteResultAsync(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeResultAsync(IActionResult result)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAlwaysRunResultFilters()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2020-02-24 16:12:33.014 +08:00 [INF] AuthenticationScheme: oidc was challenged.
+2020-02-24 16:12:55.548 +08:00 [INF] AuthenticationScheme: Cookies signed in.
+2020-02-24 16:30:31.848 +08:00 [INF] AuthenticationScheme: oidc was challenged.
+2020-02-24 16:30:39.341 +08:00 [INF] AuthenticationScheme: Cookies signed in.

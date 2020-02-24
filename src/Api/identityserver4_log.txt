@@ -1,0 +1,482 @@
+2019-08-29 13:22:38.583 +08:00 [ERR] Connection id "0HLPC83K6PM8K", Request id "0HLPC83K6PM8K:00000001": An unhandled exception was thrown by the application.
+System.InvalidOperationException: No constructor for type 'Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator' can be instantiated using services from the service container and default values.
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(Type serviceType, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateCallSite(Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngine.CreateServiceAccessor(Type serviceType)
+   at System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd(TKey key, Func`2 valueFactory)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngine.GetService(Type serviceType, ServiceProviderEngineScope serviceProviderEngineScope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngineScope.GetService(Type serviceType)
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.GetService(IServiceProvider sp, Type type, Type middleware)
+   at lambda_method(Closure , Object , HttpContext , IServiceProvider )
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.<>c__DisplayClass4_1.<UseMiddleware>b__2(HttpContext context)
+   at Microsoft.AspNetCore.Cors.Infrastructure.CorsMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Server.IISIntegration.IISMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+2019-08-29 13:27:39.036 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-08-29 13:27:39.121 +08:00 [INF] AuthenticationScheme: BearerIdentityServerAuthenticationJwt was challenged.
+2019-08-29 13:27:39.121 +08:00 [INF] AuthenticationScheme: Bearer was challenged.
+2019-08-29 13:33:35.254 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-08-29 13:33:36.608 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-08-29 13:33:42.964 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-08-29 13:33:43.013 +08:00 [INF] AuthenticationScheme: BearerIdentityServerAuthenticationJwt was challenged.
+2019-08-29 13:33:43.013 +08:00 [INF] AuthenticationScheme: Bearer was challenged.
+2019-08-29 13:33:51.828 +08:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo: '[PII is hidden]', Current time: '[PII is hidden]'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateTokenPayload(JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+2019-08-29 13:33:51.845 +08:00 [INF] BearerIdentityServerAuthenticationJwt was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo: '[PII is hidden]', Current time: '[PII is hidden]'.
+2019-08-29 13:33:51.847 +08:00 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo: '[PII is hidden]', Current time: '[PII is hidden]'.
+2019-08-29 13:33:51.853 +08:00 [INF] AuthenticationScheme: BearerIdentityServerAuthenticationJwt was challenged.
+2019-08-29 13:33:51.853 +08:00 [INF] AuthenticationScheme: Bearer was challenged.
+2019-08-29 13:33:53.412 +08:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo: '[PII is hidden]', Current time: '[PII is hidden]'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateTokenPayload(JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+2019-08-29 13:33:53.412 +08:00 [INF] BearerIdentityServerAuthenticationJwt was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo: '[PII is hidden]', Current time: '[PII is hidden]'.
+2019-08-29 13:33:53.412 +08:00 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo: '[PII is hidden]', Current time: '[PII is hidden]'.
+2019-08-29 13:33:53.412 +08:00 [INF] AuthenticationScheme: BearerIdentityServerAuthenticationJwt was challenged.
+2019-08-29 13:33:53.412 +08:00 [INF] AuthenticationScheme: Bearer was challenged.
+2019-08-29 13:33:58.501 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-08-29 13:34:07.450 +08:00 [INF] Successfully validated the token.
+2019-08-29 13:34:07.450 +08:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2019-08-29 13:34:08.449 +08:00 [INF] {"RequestUri":"http://localhost:9001/Account/Login?ReturnUrl=%2Fpermissions%3Fname%3DApi.ApiManagementPermissions.Post%26providerType%3DUser%26providerKey%3D8e579f4d-024f-480d-a06a-f807ff73e60f%26scopeId%3Da7f4c9c1-36c0-4ec5-9434-a67574f30e32","Method":{"Method":"GET"},"responseBody":null,"StatusCode":404,"costTime":841.18450000000007}
+2019-08-29 13:34:08.465 +08:00 [ERR] Connection id "0HLPC89NT2R50", Request id "0HLPC89NT2R50:00000007": An unhandled exception was thrown by the application.
+Refit.ApiException: Response status code does not indicate success: 404 (Not Found).
+   at Refit.RequestBuilderImplementation.<>c__DisplayClass14_0`2.<<BuildCancellableTaskFuncForMethod>b__0>d.MoveNext() in D:\a\1\s\Refit\RequestBuilderImplementation.cs:line 274
+--- End of stack trace from previous location where exception was thrown ---
+   at IdentityServer4Client.Authorizations.UserPermissionValueProvider.CheckAsync(PermissionValueCheckContext context) in E:\Source\Repos\IdentityServer4\samples\Quickstarts\9_Combined_AspId_and_EFStorage\IdentityServer4Client\Authorizations\UserPermissionValueProvider.cs:line 27
+   at IdentityServer4Client.Authorizations.PermissionChecker.IsGrantedAsync(ClaimsPrincipal claimsPrincipal, String name, String scope) in E:\Source\Repos\IdentityServer4\samples\Quickstarts\9_Combined_AspId_and_EFStorage\IdentityServer4Client\Authorizations\PermissionChecker.cs:line 41
+   at IdentityServer4Client.Authorizations.PermissionScopeRequirementHandler.HandleRequirementAsync(AuthorizationHandlerContext context, PermissionScopeRequirement requirement, String scope) in E:\Source\Repos\IdentityServer4\samples\Quickstarts\9_Combined_AspId_and_EFStorage\IdentityServer4Client\Authorizations\PermissionRequirementHandler.cs:line 40
+   at Microsoft.AspNetCore.Authorization.AuthorizationHandler`2.HandleAsync(AuthorizationHandlerContext context)
+   at Microsoft.AspNetCore.Authorization.DefaultAuthorizationService.AuthorizeAsync(ClaimsPrincipal user, Object resource, IEnumerable`1 requirements)
+   at Api.Controllers.IdentityController.Post(Object data) in E:\Source\Repos\IdentityServer4\samples\Quickstarts\9_Combined_AspId_and_EFStorage\src\Api\Controllers\IdentityController.cs:line 36
+   at Microsoft.AspNetCore.Mvc.Internal.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at System.Threading.Tasks.ValueTask`1.get_Result()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeNextActionFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Server.IISIntegration.IISMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+2019-08-29 13:57:19.189 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-08-29 13:57:38.447 +08:00 [INF] Successfully validated the token.
+2019-08-29 13:57:38.450 +08:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2019-08-29 13:57:38.475 +08:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2019-08-29 13:57:51.650 +08:00 [INF] Successfully validated the token.
+2019-08-29 13:57:51.650 +08:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2019-08-29 13:57:51.762 +08:00 [INF] AuthenticationScheme: Bearer was forbidden.
+2019-08-29 14:13:11.699 +08:00 [INF] Successfully validated the token.
+2019-08-29 14:13:11.725 +08:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2019-08-29 14:13:12.128 +08:00 [INF] {"RequestUri":"http://localhost:9001/permissions?name=Api.ApiManagementPermissions.Post&providerType=User&providerKey=89633607-88a3-4ad0-8a86-ddb6dc1c5268&scopeId=a7f4c9c1-36c0-4ec5-9434-a67574f30e32","Method":{"Method":"GET"},"responseBody":null,"StatusCode":200,"costTime":151.4154}
+2019-08-29 14:13:12.150 +08:00 [INF] AuthenticationScheme: Bearer was forbidden.
+2019-08-29 14:37:29.677 +08:00 [INF] Successfully validated the token.
+2019-08-29 14:37:29.701 +08:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2019-08-29 14:37:30.072 +08:00 [INF] {"RequestUri":"http://localhost:9001/permissions?name=Api.ApiManagementPermissions.Post&providerType=User&providerKey=8e579f4d-024f-480d-a06a-f807ff73e60f&scopeId=a7f4c9c1-36c0-4ec5-9434-a67574f30e32","Method":{"Method":"GET"},"responseBody":null,"StatusCode":403,"costTime":133.5089}
+2019-08-29 14:37:30.088 +08:00 [ERR] Connection id "0HLPC9DEIG79N", Request id "0HLPC9DEIG79N:00000001": An unhandled exception was thrown by the application.
+Refit.ApiException: Response status code does not indicate success: 403 (Forbidden).
+   at Refit.RequestBuilderImplementation.<>c__DisplayClass14_0`2.<<BuildCancellableTaskFuncForMethod>b__0>d.MoveNext() in D:\a\1\s\Refit\RequestBuilderImplementation.cs:line 274
+--- End of stack trace from previous location where exception was thrown ---
+   at IdentityServer4Client.Authorizations.UserPermissionValueProvider.CheckAsync(PermissionValueCheckContext context) in E:\Source\Repos\IdentityServer4\samples\Quickstarts\9_Combined_AspId_and_EFStorage\IdentityServer4Client\Authorizations\UserPermissionValueProvider.cs:line 27
+   at IdentityServer4Client.Authorizations.PermissionChecker.IsGrantedAsync(ClaimsPrincipal claimsPrincipal, String name, String scope) in E:\Source\Repos\IdentityServer4\samples\Quickstarts\9_Combined_AspId_and_EFStorage\IdentityServer4Client\Authorizations\PermissionChecker.cs:line 41
+   at IdentityServer4Client.Authorizations.PermissionScopeRequirementHandler.HandleRequirementAsync(AuthorizationHandlerContext context, PermissionScopeRequirement requirement, String scope) in E:\Source\Repos\IdentityServer4\samples\Quickstarts\9_Combined_AspId_and_EFStorage\IdentityServer4Client\Authorizations\PermissionRequirementHandler.cs:line 40
+   at Microsoft.AspNetCore.Authorization.AuthorizationHandler`2.HandleAsync(AuthorizationHandlerContext context)
+   at Microsoft.AspNetCore.Authorization.DefaultAuthorizationService.AuthorizeAsync(ClaimsPrincipal user, Object resource, IEnumerable`1 requirements)
+   at Api.Controllers.IdentityController.Post(Object data) in E:\Source\Repos\IdentityServer4\samples\Quickstarts\9_Combined_AspId_and_EFStorage\src\Api\Controllers\IdentityController.cs:line 37
+   at Microsoft.AspNetCore.Mvc.Internal.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at System.Threading.Tasks.ValueTask`1.get_Result()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeNextActionFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Server.IISIntegration.IISMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+2019-08-29 15:18:32.236 +08:00 [INF] Successfully validated the token.
+2019-08-29 15:18:32.260 +08:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2019-08-29 15:18:32.771 +08:00 [INF] {"RequestUri":"http://localhost:9001/permissions?name=Api.ApiManagementPermissions.Post&providerType=User&providerKey=95af1c1c-f3ed-4192-a6ed-4d698bb57938&scopeId=a7f4c9c1-36c0-4ec5-9434-a67574f30e32","Method":{"Method":"GET"},"responseBody":null,"StatusCode":403,"costTime":272.7382}
+2019-08-29 15:18:32.787 +08:00 [ERR] Connection id "0HLPCA4CF8MP7", Request id "0HLPCA4CF8MP7:00000001": An unhandled exception was thrown by the application.
+Refit.ApiException: Response status code does not indicate success: 403 (Forbidden).
+   at Refit.RequestBuilderImplementation.<>c__DisplayClass14_0`2.<<BuildCancellableTaskFuncForMethod>b__0>d.MoveNext() in D:\a\1\s\Refit\RequestBuilderImplementation.cs:line 274
+--- End of stack trace from previous location where exception was thrown ---
+   at IdentityServer4Client.Authorizations.UserPermissionValueProvider.CheckAsync(PermissionValueCheckContext context) in E:\Source\Repos\IdentityServer4\samples\Quickstarts\9_Combined_AspId_and_EFStorage\IdentityServer4Client\Authorizations\UserPermissionValueProvider.cs:line 27
+   at IdentityServer4Client.Authorizations.PermissionChecker.IsGrantedAsync(ClaimsPrincipal claimsPrincipal, String name, String scope) in E:\Source\Repos\IdentityServer4\samples\Quickstarts\9_Combined_AspId_and_EFStorage\IdentityServer4Client\Authorizations\PermissionChecker.cs:line 41
+   at IdentityServer4Client.Authorizations.PermissionScopeRequirementHandler.HandleRequirementAsync(AuthorizationHandlerContext context, PermissionScopeRequirement requirement, String scope) in E:\Source\Repos\IdentityServer4\samples\Quickstarts\9_Combined_AspId_and_EFStorage\IdentityServer4Client\Authorizations\PermissionRequirementHandler.cs:line 40
+   at Microsoft.AspNetCore.Authorization.AuthorizationHandler`2.HandleAsync(AuthorizationHandlerContext context)
+   at Microsoft.AspNetCore.Authorization.DefaultAuthorizationService.AuthorizeAsync(ClaimsPrincipal user, Object resource, IEnumerable`1 requirements)
+   at Api.Controllers.IdentityController.Post(Object data) in E:\Source\Repos\IdentityServer4\samples\Quickstarts\9_Combined_AspId_and_EFStorage\src\Api\Controllers\IdentityController.cs:line 37
+   at Microsoft.AspNetCore.Mvc.Internal.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at System.Threading.Tasks.ValueTask`1.get_Result()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeNextActionFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Server.IISIntegration.IISMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+2019-08-29 15:18:57.520 +08:00 [INF] Successfully validated the token.
+2019-08-29 15:18:57.545 +08:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2019-08-29 15:19:00.259 +08:00 [INF] {"RequestUri":"http://localhost:9001/permissions?name=Api.ApiManagementPermissions.Post&providerType=User&providerKey=95af1c1c-f3ed-4192-a6ed-4d698bb57938&scopeId=a7f4c9c1-36c0-4ec5-9434-a67574f30e32","Method":{"Method":"GET"},"responseBody":null,"StatusCode":200,"costTime":2468.2446}
+2019-08-29 15:19:00.279 +08:00 [INF] AuthenticationScheme: Bearer was forbidden.
+2019-08-29 15:19:02.562 +08:00 [INF] Successfully validated the token.
+2019-08-29 15:19:02.563 +08:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2019-08-29 15:19:02.577 +08:00 [INF] {"RequestUri":"http://localhost:9001/permissions?name=Api.ApiManagementPermissions.Post&providerType=User&providerKey=95af1c1c-f3ed-4192-a6ed-4d698bb57938&scopeId=a7f4c9c1-36c0-4ec5-9434-a67574f30e32","Method":{"Method":"GET"},"responseBody":null,"StatusCode":200,"costTime":12.994}
+2019-08-29 15:19:02.578 +08:00 [INF] AuthenticationScheme: Bearer was forbidden.
+2019-08-29 15:29:14.209 +08:00 [INF] Successfully validated the token.
+2019-08-29 15:29:14.232 +08:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2019-08-29 15:29:15.790 +08:00 [INF] {"RequestUri":"http://localhost:9001/permissions?name=Api.ApiManagementPermissions.Post&providerType=User&providerKey=95af1c1c-f3ed-4192-a6ed-4d698bb57938&scopeId=a7f4c9c1-36c0-4ec5-9434-a67574f30e32","Method":{"Method":"GET"},"responseBody":null,"StatusCode":403,"costTime":1314.2542}
+2019-08-29 15:29:15.808 +08:00 [ERR] Connection id "0HLPCAAAQ2USF", Request id "0HLPCAAAQ2USF:00000001": An unhandled exception was thrown by the application.
+Refit.ApiException: Response status code does not indicate success: 403 (Forbidden).
+   at Refit.RequestBuilderImplementation.<>c__DisplayClass14_0`2.<<BuildCancellableTaskFuncForMethod>b__0>d.MoveNext() in D:\a\1\s\Refit\RequestBuilderImplementation.cs:line 274
+--- End of stack trace from previous location where exception was thrown ---
+   at IdentityServer4Client.Authorizations.UserPermissionValueProvider.CheckAsync(PermissionValueCheckContext context) in E:\Source\Repos\IdentityServer4\samples\Quickstarts\9_Combined_AspId_and_EFStorage\IdentityServer4Client\Authorizations\UserPermissionValueProvider.cs:line 27
+   at IdentityServer4Client.Authorizations.PermissionChecker.IsGrantedAsync(ClaimsPrincipal claimsPrincipal, String name, String scope) in E:\Source\Repos\IdentityServer4\samples\Quickstarts\9_Combined_AspId_and_EFStorage\IdentityServer4Client\Authorizations\PermissionChecker.cs:line 41
+   at IdentityServer4Client.Authorizations.PermissionScopeRequirementHandler.HandleRequirementAsync(AuthorizationHandlerContext context, PermissionScopeRequirement requirement, String scope) in E:\Source\Repos\IdentityServer4\samples\Quickstarts\9_Combined_AspId_and_EFStorage\IdentityServer4Client\Authorizations\PermissionRequirementHandler.cs:line 40
+   at Microsoft.AspNetCore.Authorization.AuthorizationHandler`2.HandleAsync(AuthorizationHandlerContext context)
+   at Microsoft.AspNetCore.Authorization.DefaultAuthorizationService.AuthorizeAsync(ClaimsPrincipal user, Object resource, IEnumerable`1 requirements)
+   at Api.Controllers.IdentityController.Post(Object data) in E:\Source\Repos\IdentityServer4\samples\Quickstarts\9_Combined_AspId_and_EFStorage\src\Api\Controllers\IdentityController.cs:line 37
+   at Microsoft.AspNetCore.Mvc.Internal.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at System.Threading.Tasks.ValueTask`1.get_Result()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeNextActionFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Server.IISIntegration.IISMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+2019-08-29 15:31:55.828 +08:00 [INF] Successfully validated the token.
+2019-08-29 15:31:55.853 +08:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2019-08-29 15:31:57.415 +08:00 [INF] {"RequestUri":"http://localhost:9001/permissions?name=Api.ApiManagementPermissions.Post&providerType=User&providerKey=95af1c1c-f3ed-4192-a6ed-4d698bb57938&scopeId=45424f5c-6551-4cae-81d0-48b481a1c0d0","Method":{"Method":"GET"},"responseBody":null,"StatusCode":403,"costTime":1299.7863}
+2019-08-29 15:31:57.434 +08:00 [ERR] Connection id "0HLPCABRRMCMD", Request id "0HLPCABRRMCMD:00000001": An unhandled exception was thrown by the application.
+Refit.ApiException: Response status code does not indicate success: 403 (Forbidden).
+   at Refit.RequestBuilderImplementation.<>c__DisplayClass14_0`2.<<BuildCancellableTaskFuncForMethod>b__0>d.MoveNext() in D:\a\1\s\Refit\RequestBuilderImplementation.cs:line 274
+--- End of stack trace from previous location where exception was thrown ---
+   at IdentityServer4Client.Authorizations.UserPermissionValueProvider.CheckAsync(PermissionValueCheckContext context) in E:\Source\Repos\IdentityServer4\samples\Quickstarts\9_Combined_AspId_and_EFStorage\IdentityServer4Client\Authorizations\UserPermissionValueProvider.cs:line 27
+   at IdentityServer4Client.Authorizations.PermissionChecker.IsGrantedAsync(ClaimsPrincipal claimsPrincipal, String name, String scope) in E:\Source\Repos\IdentityServer4\samples\Quickstarts\9_Combined_AspId_and_EFStorage\IdentityServer4Client\Authorizations\PermissionChecker.cs:line 41
+   at IdentityServer4Client.Authorizations.PermissionScopeRequirementHandler.HandleRequirementAsync(AuthorizationHandlerContext context, PermissionScopeRequirement requirement, String scope) in E:\Source\Repos\IdentityServer4\samples\Quickstarts\9_Combined_AspId_and_EFStorage\IdentityServer4Client\Authorizations\PermissionRequirementHandler.cs:line 40
+   at Microsoft.AspNetCore.Authorization.AuthorizationHandler`2.HandleAsync(AuthorizationHandlerContext context)
+   at Microsoft.AspNetCore.Authorization.DefaultAuthorizationService.AuthorizeAsync(ClaimsPrincipal user, Object resource, IEnumerable`1 requirements)
+   at Api.Controllers.IdentityController.Post(Object data) in E:\Source\Repos\IdentityServer4\samples\Quickstarts\9_Combined_AspId_and_EFStorage\src\Api\Controllers\IdentityController.cs:line 37
+   at Microsoft.AspNetCore.Mvc.Internal.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at System.Threading.Tasks.ValueTask`1.get_Result()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeNextActionFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Server.IISIntegration.IISMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+2019-08-29 15:32:11.027 +08:00 [INF] Successfully validated the token.
+2019-08-29 15:32:11.027 +08:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2019-08-29 15:32:11.033 +08:00 [INF] {"RequestUri":"http://localhost:9001/permissions?name=Api.ApiManagementPermissions.Post&providerType=User&providerKey=e45309cc-a319-4868-b9b6-03da359ce143&scopeId=45424f5c-6551-4cae-81d0-48b481a1c0d0","Method":{"Method":"GET"},"responseBody":null,"StatusCode":403,"costTime":3.6888}
+2019-08-29 15:32:11.038 +08:00 [ERR] Connection id "0HLPCABRRMCMD", Request id "0HLPCABRRMCMD:00000002": An unhandled exception was thrown by the application.
+Refit.ApiException: Response status code does not indicate success: 403 (Forbidden).
+   at Refit.RequestBuilderImplementation.<>c__DisplayClass14_0`2.<<BuildCancellableTaskFuncForMethod>b__0>d.MoveNext() in D:\a\1\s\Refit\RequestBuilderImplementation.cs:line 274
+--- End of stack trace from previous location where exception was thrown ---
+   at IdentityServer4Client.Authorizations.UserPermissionValueProvider.CheckAsync(PermissionValueCheckContext context) in E:\Source\Repos\IdentityServer4\samples\Quickstarts\9_Combined_AspId_and_EFStorage\IdentityServer4Client\Authorizations\UserPermissionValueProvider.cs:line 27
+   at IdentityServer4Client.Authorizations.PermissionChecker.IsGrantedAsync(ClaimsPrincipal claimsPrincipal, String name, String scope) in E:\Source\Repos\IdentityServer4\samples\Quickstarts\9_Combined_AspId_and_EFStorage\IdentityServer4Client\Authorizations\PermissionChecker.cs:line 41
+   at IdentityServer4Client.Authorizations.PermissionScopeRequirementHandler.HandleRequirementAsync(AuthorizationHandlerContext context, PermissionScopeRequirement requirement, String scope) in E:\Source\Repos\IdentityServer4\samples\Quickstarts\9_Combined_AspId_and_EFStorage\IdentityServer4Client\Authorizations\PermissionRequirementHandler.cs:line 40
+   at Microsoft.AspNetCore.Authorization.AuthorizationHandler`2.HandleAsync(AuthorizationHandlerContext context)
+   at Microsoft.AspNetCore.Authorization.DefaultAuthorizationService.AuthorizeAsync(ClaimsPrincipal user, Object resource, IEnumerable`1 requirements)
+   at Api.Controllers.IdentityController.Post(Object data) in E:\Source\Repos\IdentityServer4\samples\Quickstarts\9_Combined_AspId_and_EFStorage\src\Api\Controllers\IdentityController.cs:line 37
+   at Microsoft.AspNetCore.Mvc.Internal.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at System.Threading.Tasks.ValueTask`1.get_Result()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeNextActionFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Server.IISIntegration.IISMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+2019-08-29 15:34:18.823 +08:00 [INF] Successfully validated the token.
+2019-08-29 15:34:18.847 +08:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2019-08-29 15:34:20.394 +08:00 [INF] {"RequestUri":"http://localhost:9001/permissions?name=Api.ApiManagementPermissions.Post&providerType=User&providerKey=e45309cc-a319-4868-b9b6-03da359ce143&scopeId=94594013-3023-4349-806e-c2e93a044dcc","Method":{"Method":"GET"},"responseBody":null,"StatusCode":403,"costTime":1298.7083}
+2019-08-29 15:34:20.411 +08:00 [ERR] Connection id "0HLPCAD5JVE5B", Request id "0HLPCAD5JVE5B:00000001": An unhandled exception was thrown by the application.
+Refit.ApiException: Response status code does not indicate success: 403 (Forbidden).
+   at Refit.RequestBuilderImplementation.<>c__DisplayClass14_0`2.<<BuildCancellableTaskFuncForMethod>b__0>d.MoveNext() in D:\a\1\s\Refit\RequestBuilderImplementation.cs:line 274
+--- End of stack trace from previous location where exception was thrown ---
+   at IdentityServer4Client.Authorizations.UserPermissionValueProvider.CheckAsync(PermissionValueCheckContext context) in E:\Source\Repos\IdentityServer4\samples\Quickstarts\9_Combined_AspId_and_EFStorage\IdentityServer4Client\Authorizations\UserPermissionValueProvider.cs:line 27
+   at IdentityServer4Client.Authorizations.PermissionChecker.IsGrantedAsync(ClaimsPrincipal claimsPrincipal, String name, String scope) in E:\Source\Repos\IdentityServer4\samples\Quickstarts\9_Combined_AspId_and_EFStorage\IdentityServer4Client\Authorizations\PermissionChecker.cs:line 41
+   at IdentityServer4Client.Authorizations.PermissionScopeRequirementHandler.HandleRequirementAsync(AuthorizationHandlerContext context, PermissionScopeRequirement requirement, String scope) in E:\Source\Repos\IdentityServer4\samples\Quickstarts\9_Combined_AspId_and_EFStorage\IdentityServer4Client\Authorizations\PermissionRequirementHandler.cs:line 40
+   at Microsoft.AspNetCore.Authorization.AuthorizationHandler`2.HandleAsync(AuthorizationHandlerContext context)
+   at Microsoft.AspNetCore.Authorization.DefaultAuthorizationService.AuthorizeAsync(ClaimsPrincipal user, Object resource, IEnumerable`1 requirements)
+   at Api.Controllers.IdentityController.Post(Object data) in E:\Source\Repos\IdentityServer4\samples\Quickstarts\9_Combined_AspId_and_EFStorage\src\Api\Controllers\IdentityController.cs:line 37
+   at Microsoft.AspNetCore.Mvc.Internal.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at System.Threading.Tasks.ValueTask`1.get_Result()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeNextActionFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Server.IISIntegration.IISMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+2019-08-29 15:35:36.687 +08:00 [INF] Successfully validated the token.
+2019-08-29 15:35:36.711 +08:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2019-08-29 15:35:38.275 +08:00 [INF] {"RequestUri":"http://localhost:9001/permissions?name=Api.ApiManagementPermissions.Post&providerType=User&providerKey=e45309cc-a319-4868-b9b6-03da359ce143&scopeId=94594013-3023-4349-806e-c2e93a044dcc","Method":{"Method":"GET"},"responseBody":null,"StatusCode":403,"costTime":1311.913}
+2019-08-29 15:35:38.292 +08:00 [ERR] Connection id "0HLPCADSQ4VT1", Request id "0HLPCADSQ4VT1:00000001": An unhandled exception was thrown by the application.
+Refit.ApiException: Response status code does not indicate success: 403 (Forbidden).
+   at Refit.RequestBuilderImplementation.<>c__DisplayClass14_0`2.<<BuildCancellableTaskFuncForMethod>b__0>d.MoveNext() in D:\a\1\s\Refit\RequestBuilderImplementation.cs:line 274
+--- End of stack trace from previous location where exception was thrown ---
+   at IdentityServer4Client.Authorizations.UserPermissionValueProvider.CheckAsync(PermissionValueCheckContext context) in E:\Source\Repos\IdentityServer4\samples\Quickstarts\9_Combined_AspId_and_EFStorage\IdentityServer4Client\Authorizations\UserPermissionValueProvider.cs:line 27
+   at IdentityServer4Client.Authorizations.PermissionChecker.IsGrantedAsync(ClaimsPrincipal claimsPrincipal, String name, String scope) in E:\Source\Repos\IdentityServer4\samples\Quickstarts\9_Combined_AspId_and_EFStorage\IdentityServer4Client\Authorizations\PermissionChecker.cs:line 41
+   at IdentityServer4Client.Authorizations.PermissionScopeRequirementHandler.HandleRequirementAsync(AuthorizationHandlerContext context, PermissionScopeRequirement requirement, String scope) in E:\Source\Repos\IdentityServer4\samples\Quickstarts\9_Combined_AspId_and_EFStorage\IdentityServer4Client\Authorizations\PermissionRequirementHandler.cs:line 40
+   at Microsoft.AspNetCore.Authorization.AuthorizationHandler`2.HandleAsync(AuthorizationHandlerContext context)
+   at Microsoft.AspNetCore.Authorization.DefaultAuthorizationService.AuthorizeAsync(ClaimsPrincipal user, Object resource, IEnumerable`1 requirements)
+   at Api.Controllers.IdentityController.Post(Object data) in E:\Source\Repos\IdentityServer4\samples\Quickstarts\9_Combined_AspId_and_EFStorage\src\Api\Controllers\IdentityController.cs:line 37
+   at Microsoft.AspNetCore.Mvc.Internal.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at System.Threading.Tasks.ValueTask`1.get_Result()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeNextActionFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Server.IISIntegration.IISMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+2019-08-29 15:37:11.590 +08:00 [INF] Successfully validated the token.
+2019-08-29 15:37:11.590 +08:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2019-08-29 15:37:11.598 +08:00 [INF] {"RequestUri":"http://localhost:9001/permissions?name=Api.ApiManagementPermissions.Post&providerType=User&providerKey=e45309cc-a319-4868-b9b6-03da359ce143&scopeId=94594013-3023-4349-806e-c2e93a044dcc","Method":{"Method":"GET"},"responseBody":null,"StatusCode":403,"costTime":5.4613000000000005}
+2019-08-29 15:37:11.604 +08:00 [ERR] Connection id "0HLPCADSQ4VT2", Request id "0HLPCADSQ4VT2:00000001": An unhandled exception was thrown by the application.
+Refit.ApiException: Response status code does not indicate success: 403 (Forbidden).
+   at Refit.RequestBuilderImplementation.<>c__DisplayClass14_0`2.<<BuildCancellableTaskFuncForMethod>b__0>d.MoveNext() in D:\a\1\s\Refit\RequestBuilderImplementation.cs:line 274
+--- End of stack trace from previous location where exception was thrown ---
+   at IdentityServer4Client.Authorizations.UserPermissionValueProvider.CheckAsync(PermissionValueCheckContext context) in E:\Source\Repos\IdentityServer4\samples\Quickstarts\9_Combined_AspId_and_EFStorage\IdentityServer4Client\Authorizations\UserPermissionValueProvider.cs:line 27
+   at IdentityServer4Client.Authorizations.PermissionChecker.IsGrantedAsync(ClaimsPrincipal claimsPrincipal, String name, String scope) in E:\Source\Repos\IdentityServer4\samples\Quickstarts\9_Combined_AspId_and_EFStorage\IdentityServer4Client\Authorizations\PermissionChecker.cs:line 41
+   at IdentityServer4Client.Authorizations.PermissionScopeRequirementHandler.HandleRequirementAsync(AuthorizationHandlerContext context, PermissionScopeRequirement requirement, String scope) in E:\Source\Repos\IdentityServer4\samples\Quickstarts\9_Combined_AspId_and_EFStorage\IdentityServer4Client\Authorizations\PermissionRequirementHandler.cs:line 40
+   at Microsoft.AspNetCore.Authorization.AuthorizationHandler`2.HandleAsync(AuthorizationHandlerContext context)
+   at Microsoft.AspNetCore.Authorization.DefaultAuthorizationService.AuthorizeAsync(ClaimsPrincipal user, Object resource, IEnumerable`1 requirements)
+   at Api.Controllers.IdentityController.Post(Object data) in E:\Source\Repos\IdentityServer4\samples\Quickstarts\9_Combined_AspId_and_EFStorage\src\Api\Controllers\IdentityController.cs:line 37
+   at Microsoft.AspNetCore.Mvc.Internal.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at System.Threading.Tasks.ValueTask`1.get_Result()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeNextActionFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Server.IISIntegration.IISMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+2019-08-29 15:38:53.198 +08:00 [INF] Successfully validated the token.
+2019-08-29 15:38:53.226 +08:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2019-08-29 15:40:26.940 +08:00 [WRN] {"RequestUri":"http://localhost:9001/permissions?name=Api.ApiManagementPermissions.Post&providerType=User&providerKey=e45309cc-a319-4868-b9b6-03da359ce143&scopeId=94594013-3023-4349-806e-c2e93a044dcc","Method":{"Method":"GET"},"responseBody":null,"StatusCode":403,"costTime":77169.5041}
+2019-08-29 15:40:41.595 +08:00 [ERR] Connection id "0HLPCAFN2UQMP", Request id "0HLPCAFN2UQMP:00000002": An unhandled exception was thrown by the application.
+Refit.ApiException: Response status code does not indicate success: 403 (Forbidden).
+   at Refit.RequestBuilderImplementation.<>c__DisplayClass14_0`2.<<BuildCancellableTaskFuncForMethod>b__0>d.MoveNext() in D:\a\1\s\Refit\RequestBuilderImplementation.cs:line 274
+--- End of stack trace from previous location where exception was thrown ---
+   at IdentityServer4Client.Authorizations.UserPermissionValueProvider.CheckAsync(PermissionValueCheckContext context) in E:\Source\Repos\IdentityServer4\samples\Quickstarts\9_Combined_AspId_and_EFStorage\IdentityServer4Client\Authorizations\UserPermissionValueProvider.cs:line 27
+   at IdentityServer4Client.Authorizations.PermissionChecker.IsGrantedAsync(ClaimsPrincipal claimsPrincipal, String name, String scope) in E:\Source\Repos\IdentityServer4\samples\Quickstarts\9_Combined_AspId_and_EFStorage\IdentityServer4Client\Authorizations\PermissionChecker.cs:line 41
+   at IdentityServer4Client.Authorizations.PermissionScopeRequirementHandler.HandleRequirementAsync(AuthorizationHandlerContext context, PermissionScopeRequirement requirement, String scope) in E:\Source\Repos\IdentityServer4\samples\Quickstarts\9_Combined_AspId_and_EFStorage\IdentityServer4Client\Authorizations\PermissionRequirementHandler.cs:line 40
+   at Microsoft.AspNetCore.Authorization.AuthorizationHandler`2.HandleAsync(AuthorizationHandlerContext context)
+   at Microsoft.AspNetCore.Authorization.DefaultAuthorizationService.AuthorizeAsync(ClaimsPrincipal user, Object resource, IEnumerable`1 requirements)
+   at Api.Controllers.IdentityController.Post(Object data) in E:\Source\Repos\IdentityServer4\samples\Quickstarts\9_Combined_AspId_and_EFStorage\src\Api\Controllers\IdentityController.cs:line 37
+   at Microsoft.AspNetCore.Mvc.Internal.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at System.Threading.Tasks.ValueTask`1.get_Result()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeNextActionFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Server.IISIntegration.IISMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+2019-08-29 15:55:50.480 +08:00 [INF] Successfully validated the token.
+2019-08-29 15:55:50.504 +08:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2019-08-29 15:55:53.292 +08:00 [INF] {"RequestUri":"http://localhost:9001/permissions?name=Api.ApiManagementPermissions.Post&providerType=User&providerKey=e45309cc-a319-4868-b9b6-03da359ce143&scopeId=94594013-3023-4349-806e-c2e93a044dcc","Method":{"Method":"GET"},"responseBody":null,"StatusCode":200,"costTime":2536.2137000000002}
+2019-08-29 15:55:53.319 +08:00 [INF] {"RequestUri":"http://localhost:9001/permissions?name=Api.ApiManagementPermissions.Post&providerType=Role&providerKey=zero.tenantRole1&scopeId=94594013-3023-4349-806e-c2e93a044dcc","Method":{"Method":"GET"},"responseBody":null,"StatusCode":200,"costTime":14.258700000000001}
+2019-08-29 15:55:53.328 +08:00 [INF] AuthenticationScheme: Bearer was forbidden.
+2019-08-29 15:55:57.081 +08:00 [INF] Successfully validated the token.
+2019-08-29 15:55:57.081 +08:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2019-08-29 15:55:57.085 +08:00 [INF] {"RequestUri":"http://localhost:9001/permissions?name=Api.ApiManagementPermissions.Post&providerType=User&providerKey=e45309cc-a319-4868-b9b6-03da359ce143&scopeId=94594013-3023-4349-806e-c2e93a044dcc","Method":{"Method":"GET"},"responseBody":null,"StatusCode":200,"costTime":2.69}
+2019-08-29 15:55:57.088 +08:00 [INF] {"RequestUri":"http://localhost:9001/permissions?name=Api.ApiManagementPermissions.Post&providerType=Role&providerKey=zero.tenantRole1&scopeId=94594013-3023-4349-806e-c2e93a044dcc","Method":{"Method":"GET"},"responseBody":null,"StatusCode":200,"costTime":2.7186000000000003}
+2019-08-29 15:55:57.089 +08:00 [INF] AuthenticationScheme: Bearer was forbidden.
+2019-08-29 15:56:14.093 +08:00 [INF] Successfully validated the token.
+2019-08-29 15:56:14.126 +08:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2019-08-29 15:56:34.688 +08:00 [WRN] {"RequestUri":"http://localhost:9001/permissions?name=Api.ApiManagementPermissions.Post&providerType=User&providerKey=e45309cc-a319-4868-b9b6-03da359ce143&scopeId=94594013-3023-4349-806e-c2e93a044dcc","Method":{"Method":"GET"},"responseBody":null,"StatusCode":200,"costTime":20137.478900000002}
+2019-08-29 15:56:37.665 +08:00 [INF] {"RequestUri":"http://localhost:9001/permissions?name=Api.ApiManagementPermissions.Post&providerType=Role&providerKey=zero.tenantRole1&scopeId=94594013-3023-4349-806e-c2e93a044dcc","Method":{"Method":"GET"},"responseBody":null,"StatusCode":200,"costTime":2963.237}
+2019-08-29 15:56:37.677 +08:00 [INF] AuthenticationScheme: Bearer was forbidden.
+2019-08-29 15:57:25.668 +08:00 [INF] Successfully validated the token.
+2019-08-29 15:57:25.692 +08:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2019-08-29 15:57:28.558 +08:00 [INF] {"RequestUri":"http://localhost:9001/permissions?name=Api.ApiManagementPermissions.Post&providerType=User&providerKey=e45309cc-a319-4868-b9b6-03da359ce143&scopeId=3d0a1642-c2e1-4031-96a9-4fc651c245c1","Method":{"Method":"GET"},"responseBody":null,"StatusCode":200,"costTime":2626.2763}
+2019-08-29 15:57:28.580 +08:00 [INF] AuthenticationScheme: Bearer was forbidden.
+2019-08-29 15:57:30.044 +08:00 [INF] Successfully validated the token.
+2019-08-29 15:57:30.045 +08:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2019-08-29 15:57:30.059 +08:00 [INF] {"RequestUri":"http://localhost:9001/permissions?name=Api.ApiManagementPermissions.Post&providerType=User&providerKey=e45309cc-a319-4868-b9b6-03da359ce143&scopeId=3d0a1642-c2e1-4031-96a9-4fc651c245c1","Method":{"Method":"GET"},"responseBody":null,"StatusCode":200,"costTime":12.9707}
+2019-08-29 15:57:30.060 +08:00 [INF] AuthenticationScheme: Bearer was forbidden.
+2019-08-29 15:57:30.573 +08:00 [INF] Successfully validated the token.
+2019-08-29 15:57:30.573 +08:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2019-08-29 15:57:30.576 +08:00 [INF] {"RequestUri":"http://localhost:9001/permissions?name=Api.ApiManagementPermissions.Post&providerType=User&providerKey=e45309cc-a319-4868-b9b6-03da359ce143&scopeId=3d0a1642-c2e1-4031-96a9-4fc651c245c1","Method":{"Method":"GET"},"responseBody":null,"StatusCode":200,"costTime":2.6269}
+2019-08-29 15:57:30.577 +08:00 [INF] AuthenticationScheme: Bearer was forbidden.
+2019-08-29 15:57:30.755 +08:00 [INF] Successfully validated the token.
+2019-08-29 15:57:30.755 +08:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2019-08-29 15:57:30.758 +08:00 [INF] {"RequestUri":"http://localhost:9001/permissions?name=Api.ApiManagementPermissions.Post&providerType=User&providerKey=e45309cc-a319-4868-b9b6-03da359ce143&scopeId=3d0a1642-c2e1-4031-96a9-4fc651c245c1","Method":{"Method":"GET"},"responseBody":null,"StatusCode":200,"costTime":2.424}
+2019-08-29 15:57:30.759 +08:00 [INF] AuthenticationScheme: Bearer was forbidden.
+2019-08-29 15:57:30.923 +08:00 [INF] Successfully validated the token.
+2019-08-29 15:57:30.923 +08:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2019-08-29 15:57:30.926 +08:00 [INF] {"RequestUri":"http://localhost:9001/permissions?name=Api.ApiManagementPermissions.Post&providerType=User&providerKey=e45309cc-a319-4868-b9b6-03da359ce143&scopeId=3d0a1642-c2e1-4031-96a9-4fc651c245c1","Method":{"Method":"GET"},"responseBody":null,"StatusCode":200,"costTime":2.3992}
+2019-08-29 15:57:30.926 +08:00 [INF] AuthenticationScheme: Bearer was forbidden.
+2019-08-29 15:57:31.074 +08:00 [INF] Successfully validated the token.
+2019-08-29 15:57:31.074 +08:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2019-08-29 15:57:31.078 +08:00 [INF] {"RequestUri":"http://localhost:9001/permissions?name=Api.ApiManagementPermissions.Post&providerType=User&providerKey=e45309cc-a319-4868-b9b6-03da359ce143&scopeId=3d0a1642-c2e1-4031-96a9-4fc651c245c1","Method":{"Method":"GET"},"responseBody":null,"StatusCode":200,"costTime":2.6104000000000003}
+2019-08-29 15:57:31.078 +08:00 [INF] AuthenticationScheme: Bearer was forbidden.
+2019-08-29 15:57:31.211 +08:00 [INF] Successfully validated the token.
+2019-08-29 15:57:31.211 +08:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2019-08-29 15:57:31.214 +08:00 [INF] {"RequestUri":"http://localhost:9001/permissions?name=Api.ApiManagementPermissions.Post&providerType=User&providerKey=e45309cc-a319-4868-b9b6-03da359ce143&scopeId=3d0a1642-c2e1-4031-96a9-4fc651c245c1","Method":{"Method":"GET"},"responseBody":null,"StatusCode":200,"costTime":2.3525}
+2019-08-29 15:57:31.214 +08:00 [INF] AuthenticationScheme: Bearer was forbidden.
+2019-08-29 15:57:31.344 +08:00 [INF] Successfully validated the token.
+2019-08-29 15:57:31.344 +08:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2019-08-29 15:57:31.347 +08:00 [INF] {"RequestUri":"http://localhost:9001/permissions?name=Api.ApiManagementPermissions.Post&providerType=User&providerKey=e45309cc-a319-4868-b9b6-03da359ce143&scopeId=3d0a1642-c2e1-4031-96a9-4fc651c245c1","Method":{"Method":"GET"},"responseBody":null,"StatusCode":200,"costTime":2.3606000000000003}
+2019-08-29 15:57:31.348 +08:00 [INF] AuthenticationScheme: Bearer was forbidden.
+2019-08-29 15:57:31.490 +08:00 [INF] Successfully validated the token.
+2019-08-29 15:57:31.490 +08:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2019-08-29 15:57:31.493 +08:00 [INF] {"RequestUri":"http://localhost:9001/permissions?name=Api.ApiManagementPermissions.Post&providerType=User&providerKey=e45309cc-a319-4868-b9b6-03da359ce143&scopeId=3d0a1642-c2e1-4031-96a9-4fc651c245c1","Method":{"Method":"GET"},"responseBody":null,"StatusCode":200,"costTime":2.5387}
+2019-08-29 15:57:31.494 +08:00 [INF] AuthenticationScheme: Bearer was forbidden.
+2019-08-29 15:57:51.109 +08:00 [INF] Successfully validated the token.
+2019-08-29 15:57:51.109 +08:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2019-08-29 15:57:51.113 +08:00 [INF] {"RequestUri":"http://localhost:9001/permissions?name=Api.ApiManagementPermissions.Post&providerType=User&providerKey=65a57cea-6c9b-4239-9f04-8ead5cda20fb&scopeId=3d0a1642-c2e1-4031-96a9-4fc651c245c1","Method":{"Method":"GET"},"responseBody":null,"StatusCode":200,"costTime":2.6819}
+2019-08-29 15:57:51.115 +08:00 [INF] {"RequestUri":"http://localhost:9001/permissions?name=Api.ApiManagementPermissions.Post&providerType=Role&providerKey=zero.tenantRole1&scopeId=3d0a1642-c2e1-4031-96a9-4fc651c245c1","Method":{"Method":"GET"},"responseBody":null,"StatusCode":200,"costTime":2.0981}
+2019-08-29 15:57:53.565 +08:00 [INF] Successfully validated the token.
+2019-08-29 15:57:53.565 +08:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2019-08-29 15:57:53.569 +08:00 [INF] {"RequestUri":"http://localhost:9001/permissions?name=Api.ApiManagementPermissions.Post&providerType=User&providerKey=65a57cea-6c9b-4239-9f04-8ead5cda20fb&scopeId=3d0a1642-c2e1-4031-96a9-4fc651c245c1","Method":{"Method":"GET"},"responseBody":null,"StatusCode":200,"costTime":3.7496}
+2019-08-29 15:57:53.574 +08:00 [INF] {"RequestUri":"http://localhost:9001/permissions?name=Api.ApiManagementPermissions.Post&providerType=Role&providerKey=zero.tenantRole1&scopeId=3d0a1642-c2e1-4031-96a9-4fc651c245c1","Method":{"Method":"GET"},"responseBody":null,"StatusCode":200,"costTime":2.1632000000000002}
+2019-08-29 15:57:54.051 +08:00 [INF] Successfully validated the token.
+2019-08-29 15:57:54.051 +08:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2019-08-29 15:57:54.056 +08:00 [INF] {"RequestUri":"http://localhost:9001/permissions?name=Api.ApiManagementPermissions.Post&providerType=User&providerKey=65a57cea-6c9b-4239-9f04-8ead5cda20fb&scopeId=3d0a1642-c2e1-4031-96a9-4fc651c245c1","Method":{"Method":"GET"},"responseBody":null,"StatusCode":200,"costTime":4.3855}
+2019-08-29 15:57:54.058 +08:00 [INF] {"RequestUri":"http://localhost:9001/permissions?name=Api.ApiManagementPermissions.Post&providerType=Role&providerKey=zero.tenantRole1&scopeId=3d0a1642-c2e1-4031-96a9-4fc651c245c1","Method":{"Method":"GET"},"responseBody":null,"StatusCode":200,"costTime":2.1608}
+2019-08-29 15:57:54.243 +08:00 [INF] Successfully validated the token.
+2019-08-29 15:57:54.243 +08:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2019-08-29 15:57:54.245 +08:00 [INF] {"RequestUri":"http://localhost:9001/permissions?name=Api.ApiManagementPermissions.Post&providerType=User&providerKey=65a57cea-6c9b-4239-9f04-8ead5cda20fb&scopeId=3d0a1642-c2e1-4031-96a9-4fc651c245c1","Method":{"Method":"GET"},"responseBody":null,"StatusCode":200,"costTime":2.2419000000000002}
+2019-08-29 15:57:54.248 +08:00 [INF] {"RequestUri":"http://localhost:9001/permissions?name=Api.ApiManagementPermissions.Post&providerType=Role&providerKey=zero.tenantRole1&scopeId=3d0a1642-c2e1-4031-96a9-4fc651c245c1","Method":{"Method":"GET"},"responseBody":null,"StatusCode":200,"costTime":1.8167}
+2019-08-29 15:57:54.379 +08:00 [INF] Successfully validated the token.
+2019-08-29 15:57:54.379 +08:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2019-08-29 15:57:54.384 +08:00 [INF] {"RequestUri":"http://localhost:9001/permissions?name=Api.ApiManagementPermissions.Post&providerType=User&providerKey=65a57cea-6c9b-4239-9f04-8ead5cda20fb&scopeId=3d0a1642-c2e1-4031-96a9-4fc651c245c1","Method":{"Method":"GET"},"responseBody":null,"StatusCode":200,"costTime":3.9847}
+2019-08-29 15:57:54.388 +08:00 [INF] {"RequestUri":"http://localhost:9001/permissions?name=Api.ApiManagementPermissions.Post&providerType=Role&providerKey=zero.tenantRole1&scopeId=3d0a1642-c2e1-4031-96a9-4fc651c245c1","Method":{"Method":"GET"},"responseBody":null,"StatusCode":200,"costTime":3.9869000000000003}
+2019-08-29 15:57:54.507 +08:00 [INF] Successfully validated the token.
+2019-08-29 15:57:54.508 +08:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2019-08-29 15:57:54.512 +08:00 [INF] {"RequestUri":"http://localhost:9001/permissions?name=Api.ApiManagementPermissions.Post&providerType=User&providerKey=65a57cea-6c9b-4239-9f04-8ead5cda20fb&scopeId=3d0a1642-c2e1-4031-96a9-4fc651c245c1","Method":{"Method":"GET"},"responseBody":null,"StatusCode":200,"costTime":4.1882}
+2019-08-29 15:57:54.515 +08:00 [INF] {"RequestUri":"http://localhost:9001/permissions?name=Api.ApiManagementPermissions.Post&providerType=Role&providerKey=zero.tenantRole1&scopeId=3d0a1642-c2e1-4031-96a9-4fc651c245c1","Method":{"Method":"GET"},"responseBody":null,"StatusCode":200,"costTime":2.1593}
+2019-08-29 15:57:54.661 +08:00 [INF] Successfully validated the token.
+2019-08-29 15:57:54.661 +08:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2019-08-29 15:57:54.666 +08:00 [INF] {"RequestUri":"http://localhost:9001/permissions?name=Api.ApiManagementPermissions.Post&providerType=User&providerKey=65a57cea-6c9b-4239-9f04-8ead5cda20fb&scopeId=3d0a1642-c2e1-4031-96a9-4fc651c245c1","Method":{"Method":"GET"},"responseBody":null,"StatusCode":200,"costTime":4.0672000000000006}
+2019-08-29 15:57:54.670 +08:00 [INF] {"RequestUri":"http://localhost:9001/permissions?name=Api.ApiManagementPermissions.Post&providerType=Role&providerKey=zero.tenantRole1&scopeId=3d0a1642-c2e1-4031-96a9-4fc651c245c1","Method":{"Method":"GET"},"responseBody":null,"StatusCode":200,"costTime":3.9734000000000003}
+2019-08-29 15:57:54.802 +08:00 [INF] Successfully validated the token.
+2019-08-29 15:57:54.802 +08:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2019-08-29 15:57:54.807 +08:00 [INF] {"RequestUri":"http://localhost:9001/permissions?name=Api.ApiManagementPermissions.Post&providerType=User&providerKey=65a57cea-6c9b-4239-9f04-8ead5cda20fb&scopeId=3d0a1642-c2e1-4031-96a9-4fc651c245c1","Method":{"Method":"GET"},"responseBody":null,"StatusCode":200,"costTime":3.7512000000000003}
+2019-08-29 15:57:54.810 +08:00 [INF] {"RequestUri":"http://localhost:9001/permissions?name=Api.ApiManagementPermissions.Post&providerType=Role&providerKey=zero.tenantRole1&scopeId=3d0a1642-c2e1-4031-96a9-4fc651c245c1","Method":{"Method":"GET"},"responseBody":null,"StatusCode":200,"costTime":3.5652000000000004}
+2019-08-29 15:57:54.970 +08:00 [INF] Successfully validated the token.
+2019-08-29 15:57:54.970 +08:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2019-08-29 15:57:54.974 +08:00 [INF] {"RequestUri":"http://localhost:9001/permissions?name=Api.ApiManagementPermissions.Post&providerType=User&providerKey=65a57cea-6c9b-4239-9f04-8ead5cda20fb&scopeId=3d0a1642-c2e1-4031-96a9-4fc651c245c1","Method":{"Method":"GET"},"responseBody":null,"StatusCode":200,"costTime":3.3402000000000003}
+2019-08-29 15:57:54.977 +08:00 [INF] {"RequestUri":"http://localhost:9001/permissions?name=Api.ApiManagementPermissions.Post&providerType=Role&providerKey=zero.tenantRole1&scopeId=3d0a1642-c2e1-4031-96a9-4fc651c245c1","Method":{"Method":"GET"},"responseBody":null,"StatusCode":200,"costTime":2.4987}
+2019-08-29 16:06:36.218 +08:00 [INF] Successfully validated the token.
+2019-08-29 16:06:36.242 +08:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2019-08-29 16:06:39.033 +08:00 [INF] {"RequestUri":"http://localhost:9001/permissions?name=Api.ApiManagementPermissions.Post&providerType=User&providerKey=65a57cea-6c9b-4239-9f04-8ead5cda20fb&scopeId=3d0a1642-c2e1-4031-96a9-4fc651c245c1","Method":{"Method":"GET"},"responseBody":null,"StatusCode":200,"costTime":2532.9669}
+2019-08-29 16:06:39.057 +08:00 [INF] {"RequestUri":"http://localhost:9001/permissions?name=Api.ApiManagementPermissions.Post&providerType=Role&providerKey=zero.tenantRole1&scopeId=3d0a1642-c2e1-4031-96a9-4fc651c245c1","Method":{"Method":"GET"},"responseBody":null,"StatusCode":200,"costTime":13.1822}
+2019-08-29 16:06:39.067 +08:00 [INF] AuthenticationScheme: Bearer was forbidden.
+2019-08-29 16:06:57.133 +08:00 [INF] Successfully validated the token.
+2019-08-29 16:06:57.133 +08:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2019-08-29 16:06:57.138 +08:00 [INF] {"RequestUri":"http://localhost:9001/permissions?name=Api.ApiManagementPermissions.Post&providerType=User&providerKey=7b47a056-15a1-462e-bbc5-030ee66059a3&scopeId=3d0a1642-c2e1-4031-96a9-4fc651c245c1","Method":{"Method":"GET"},"responseBody":null,"StatusCode":200,"costTime":3.9954}
+2019-08-29 16:06:57.139 +08:00 [INF] AuthenticationScheme: Bearer was forbidden.
+2019-08-29 16:07:02.226 +08:00 [INF] Successfully validated the token.
+2019-08-29 16:07:02.226 +08:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2019-08-29 16:07:02.229 +08:00 [INF] {"RequestUri":"http://localhost:9001/permissions?name=Api.ApiManagementPermissions.Post&providerType=User&providerKey=7b47a056-15a1-462e-bbc5-030ee66059a3&scopeId=3d0a1642-c2e1-4031-96a9-4fc651c245c1","Method":{"Method":"GET"},"responseBody":null,"StatusCode":200,"costTime":2.2585}
+2019-08-29 16:07:02.229 +08:00 [INF] AuthenticationScheme: Bearer was forbidden.
+2019-08-29 16:07:02.784 +08:00 [INF] Successfully validated the token.
+2019-08-29 16:07:02.784 +08:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2019-08-29 16:07:02.787 +08:00 [INF] {"RequestUri":"http://localhost:9001/permissions?name=Api.ApiManagementPermissions.Post&providerType=User&providerKey=7b47a056-15a1-462e-bbc5-030ee66059a3&scopeId=3d0a1642-c2e1-4031-96a9-4fc651c245c1","Method":{"Method":"GET"},"responseBody":null,"StatusCode":200,"costTime":2.3387000000000002}
+2019-08-29 16:07:02.787 +08:00 [INF] AuthenticationScheme: Bearer was forbidden.
+2019-08-29 16:07:02.959 +08:00 [INF] Successfully validated the token.
+2019-08-29 16:07:02.959 +08:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2019-08-29 16:07:02.962 +08:00 [INF] {"RequestUri":"http://localhost:9001/permissions?name=Api.ApiManagementPermissions.Post&providerType=User&providerKey=7b47a056-15a1-462e-bbc5-030ee66059a3&scopeId=3d0a1642-c2e1-4031-96a9-4fc651c245c1","Method":{"Method":"GET"},"responseBody":null,"StatusCode":200,"costTime":2.4298}
+2019-08-29 16:07:02.962 +08:00 [INF] AuthenticationScheme: Bearer was forbidden.
+2019-08-29 16:07:03.126 +08:00 [INF] Successfully validated the token.
+2019-08-29 16:07:03.126 +08:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2019-08-29 16:07:03.129 +08:00 [INF] {"RequestUri":"http://localhost:9001/permissions?name=Api.ApiManagementPermissions.Post&providerType=User&providerKey=7b47a056-15a1-462e-bbc5-030ee66059a3&scopeId=3d0a1642-c2e1-4031-96a9-4fc651c245c1","Method":{"Method":"GET"},"responseBody":null,"StatusCode":200,"costTime":2.3767}
+2019-08-29 16:07:03.130 +08:00 [INF] AuthenticationScheme: Bearer was forbidden.
+2019-08-29 16:07:03.285 +08:00 [INF] Successfully validated the token.
+2019-08-29 16:07:03.285 +08:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2019-08-29 16:07:03.288 +08:00 [INF] {"RequestUri":"http://localhost:9001/permissions?name=Api.ApiManagementPermissions.Post&providerType=User&providerKey=7b47a056-15a1-462e-bbc5-030ee66059a3&scopeId=3d0a1642-c2e1-4031-96a9-4fc651c245c1","Method":{"Method":"GET"},"responseBody":null,"StatusCode":200,"costTime":2.4198}
+2019-08-29 16:07:03.288 +08:00 [INF] AuthenticationScheme: Bearer was forbidden.
+2019-08-29 16:08:47.480 +08:00 [INF] Successfully validated the token.
+2019-08-29 16:08:47.503 +08:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2019-08-29 16:08:50.179 +08:00 [INF] {"RequestUri":"http://localhost:9001/permissions?name=Api.ApiManagementPermissions.Post&providerType=User&providerKey=7b47a056-15a1-462e-bbc5-030ee66059a3&scopeId=3d0a1642-c2e1-4031-96a9-4fc651c245c1","Method":{"Method":"GET"},"responseBody":null,"StatusCode":200,"costTime":2434.7318}
+2019-08-29 16:08:50.199 +08:00 [INF] AuthenticationScheme: Bearer was forbidden.
+2019-08-29 16:09:04.508 +08:00 [INF] Successfully validated the token.
+2019-08-29 16:09:04.508 +08:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2019-08-29 16:09:04.524 +08:00 [INF] {"RequestUri":"http://localhost:9001/permissions?name=Api.ApiManagementPermissions.Post&providerType=User&providerKey=c8661ec6-8a4f-44e3-bf1d-031a19934320&scopeId=3d0a1642-c2e1-4031-96a9-4fc651c245c1","Method":{"Method":"GET"},"responseBody":null,"StatusCode":200,"costTime":13.954}
+2019-08-29 16:09:04.527 +08:00 [INF] {"RequestUri":"http://localhost:9001/permissions?name=Api.ApiManagementPermissions.Post&providerType=Role&providerKey=zero.tenantRole1&scopeId=3d0a1642-c2e1-4031-96a9-4fc651c245c1","Method":{"Method":"GET"},"responseBody":null,"StatusCode":200,"costTime":2.2136}
+2019-08-29 16:09:05.640 +08:00 [INF] Successfully validated the token.
+2019-08-29 16:09:05.640 +08:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2019-08-29 16:09:05.643 +08:00 [INF] {"RequestUri":"http://localhost:9001/permissions?name=Api.ApiManagementPermissions.Post&providerType=User&providerKey=c8661ec6-8a4f-44e3-bf1d-031a19934320&scopeId=3d0a1642-c2e1-4031-96a9-4fc651c245c1","Method":{"Method":"GET"},"responseBody":null,"StatusCode":200,"costTime":2.4251}
+2019-08-29 16:09:05.646 +08:00 [INF] {"RequestUri":"http://localhost:9001/permissions?name=Api.ApiManagementPermissions.Post&providerType=Role&providerKey=zero.tenantRole1&scopeId=3d0a1642-c2e1-4031-96a9-4fc651c245c1","Method":{"Method":"GET"},"responseBody":null,"StatusCode":200,"costTime":2.3776}
+2019-08-29 16:09:05.862 +08:00 [INF] Successfully validated the token.
+2019-08-29 16:09:05.862 +08:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2019-08-29 16:09:05.866 +08:00 [INF] {"RequestUri":"http://localhost:9001/permissions?name=Api.ApiManagementPermissions.Post&providerType=User&providerKey=c8661ec6-8a4f-44e3-bf1d-031a19934320&scopeId=3d0a1642-c2e1-4031-96a9-4fc651c245c1","Method":{"Method":"GET"},"responseBody":null,"StatusCode":200,"costTime":2.5744000000000002}
+2019-08-29 16:09:05.868 +08:00 [INF] {"RequestUri":"http://localhost:9001/permissions?name=Api.ApiManagementPermissions.Post&providerType=Role&providerKey=zero.tenantRole1&scopeId=3d0a1642-c2e1-4031-96a9-4fc651c245c1","Method":{"Method":"GET"},"responseBody":null,"StatusCode":200,"costTime":2.168}
+2019-08-29 16:09:06.028 +08:00 [INF] Successfully validated the token.
+2019-08-29 16:09:06.029 +08:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2019-08-29 16:09:06.031 +08:00 [INF] {"RequestUri":"http://localhost:9001/permissions?name=Api.ApiManagementPermissions.Post&providerType=User&providerKey=c8661ec6-8a4f-44e3-bf1d-031a19934320&scopeId=3d0a1642-c2e1-4031-96a9-4fc651c245c1","Method":{"Method":"GET"},"responseBody":null,"StatusCode":200,"costTime":2.1959}
+2019-08-29 16:09:06.033 +08:00 [INF] {"RequestUri":"http://localhost:9001/permissions?name=Api.ApiManagementPermissions.Post&providerType=Role&providerKey=zero.tenantRole1&scopeId=3d0a1642-c2e1-4031-96a9-4fc651c245c1","Method":{"Method":"GET"},"responseBody":null,"StatusCode":200,"costTime":1.8544}
+2019-08-29 16:09:06.189 +08:00 [INF] Successfully validated the token.
+2019-08-29 16:09:06.189 +08:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2019-08-29 16:09:06.192 +08:00 [INF] {"RequestUri":"http://localhost:9001/permissions?name=Api.ApiManagementPermissions.Post&providerType=User&providerKey=c8661ec6-8a4f-44e3-bf1d-031a19934320&scopeId=3d0a1642-c2e1-4031-96a9-4fc651c245c1","Method":{"Method":"GET"},"responseBody":null,"StatusCode":200,"costTime":2.6724}
+2019-08-29 16:09:06.195 +08:00 [INF] {"RequestUri":"http://localhost:9001/permissions?name=Api.ApiManagementPermissions.Post&providerType=Role&providerKey=zero.tenantRole1&scopeId=3d0a1642-c2e1-4031-96a9-4fc651c245c1","Method":{"Method":"GET"},"responseBody":null,"StatusCode":200,"costTime":2.6168}
+2019-08-29 16:09:06.359 +08:00 [INF] Successfully validated the token.
+2019-08-29 16:09:06.359 +08:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2019-08-29 16:09:06.364 +08:00 [INF] {"RequestUri":"http://localhost:9001/permissions?name=Api.ApiManagementPermissions.Post&providerType=User&providerKey=c8661ec6-8a4f-44e3-bf1d-031a19934320&scopeId=3d0a1642-c2e1-4031-96a9-4fc651c245c1","Method":{"Method":"GET"},"responseBody":null,"StatusCode":200,"costTime":2.7524}
+2019-08-29 16:09:06.367 +08:00 [INF] {"RequestUri":"http://localhost:9001/permissions?name=Api.ApiManagementPermissions.Post&providerType=Role&providerKey=zero.tenantRole1&scopeId=3d0a1642-c2e1-4031-96a9-4fc651c245c1","Method":{"Method":"GET"},"responseBody":null,"StatusCode":200,"costTime":2.7744}
+2019-08-29 16:09:47.128 +08:00 [INF] Successfully validated the token.
+2019-08-29 16:09:47.128 +08:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2019-08-29 16:09:47.132 +08:00 [INF] {"RequestUri":"http://localhost:9001/permissions?name=Api.ApiManagementPermissions.Post&providerType=User&providerKey=c8661ec6-8a4f-44e3-bf1d-031a19934320&scopeId=3d0a1642-c2e1-4031-96a9-4fc651c245c1","Method":{"Method":"GET"},"responseBody":null,"StatusCode":200,"costTime":2.8892}
+2019-08-29 16:09:47.134 +08:00 [INF] {"RequestUri":"http://localhost:9001/permissions?name=Api.ApiManagementPermissions.Post&providerType=Role&providerKey=zero.tenantRole1&scopeId=3d0a1642-c2e1-4031-96a9-4fc651c245c1","Method":{"Method":"GET"},"responseBody":null,"StatusCode":200,"costTime":2.2428}
+2019-08-29 16:09:58.646 +08:00 [INF] Successfully validated the token.
+2019-08-29 16:09:58.646 +08:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2019-08-29 16:09:58.651 +08:00 [INF] {"RequestUri":"http://localhost:9001/permissions?name=Api.ApiManagementPermissions.Post&providerType=User&providerKey=e1804e85-12e8-40d4-a372-d3fdc276c3d1&scopeId=3d0a1642-c2e1-4031-96a9-4fc651c245c1","Method":{"Method":"GET"},"responseBody":null,"StatusCode":200,"costTime":3.9458}
+2019-08-29 16:09:58.651 +08:00 [INF] AuthenticationScheme: Bearer was forbidden.
+2019-08-29 16:10:00.150 +08:00 [INF] Successfully validated the token.
+2019-08-29 16:10:00.150 +08:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2019-08-29 16:10:00.155 +08:00 [INF] {"RequestUri":"http://localhost:9001/permissions?name=Api.ApiManagementPermissions.Post&providerType=User&providerKey=e1804e85-12e8-40d4-a372-d3fdc276c3d1&scopeId=3d0a1642-c2e1-4031-96a9-4fc651c245c1","Method":{"Method":"GET"},"responseBody":null,"StatusCode":200,"costTime":3.7402}
+2019-08-29 16:10:00.155 +08:00 [INF] AuthenticationScheme: Bearer was forbidden.
