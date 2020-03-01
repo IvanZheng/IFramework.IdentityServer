@@ -172,11 +172,45 @@ namespace IdentityServerAspNetIdentity
                     ClientSecrets = {new Secret("secret".Sha256())},
                     AllowedScopes = {"api1", adminConfiguration.IdentityAdminApiScope}
                 },
+                new Client
+                {
+                    ClientId = "spring",
+                    ClientName = "Spring MVC Client",
+                    RequireConsent = false,
+                    AllowedGrantTypes = GrantTypes.CodeAndClientCredentials,
+                    ClientSecrets = {new Secret("secret".Sha256())},
+                    RedirectUris = {"http://localhost:8082/ui/login"},
+                    PostLogoutRedirectUris = {"http://localhost:8082/ui/logout"},
+                    AllowedScopes = {
+                        IdentityServerConstants.StandardScopes.OpenId, 
+                        IdentityServerConstants.StandardScopes.Profile,
+                        JwtClaimTypes.Role,
+                        "api1",
+                        "api2",
+                        adminConfiguration.IdentityAdminApiScope
+                    },
+                    AllowOfflineAccess = true
+                },
+                /*
+                 * security:
+                       basic:
+                         enabled: false
+                       oauth2:
+                         client:
+                           clientId: spring
+                           clientSecret: secret
+                           accessTokenUri: http://localhost:5000/connect/token
+                           userAuthorizationUri: http://localhost:5000/connect/authorize
+                           scope: openid profile api1 api2 offline_access role
+                         resource:
+                           userInfoUri: http://localhost:5000/connect/userinfo
+                 */
                 // OpenID Connect hybrid flow client (MVC)
                 new Client
                 {
                     ClientId = "mvc",
                     ClientName = "MVC Client",
+                    RequireConsent = false,
                     AllowedGrantTypes = GrantTypes.Hybrid,
                     ClientSecrets = {new Secret("secret".Sha256())},
                     RedirectUris = {"http://localhost:5002/signin-oidc"},
@@ -195,6 +229,7 @@ namespace IdentityServerAspNetIdentity
                 {
                     ClientId = "mvc2",
                     ClientName = "MVC Client2",
+                    RequireConsent = false,
                     AllowedGrantTypes = GrantTypes.Hybrid,
                     ClientSecrets = {new Secret("secret".Sha256())},
                     RedirectUris = {"http://localhost:5003/signin-oidc"},

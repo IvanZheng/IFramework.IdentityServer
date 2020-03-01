@@ -22,7 +22,6 @@ namespace Client
                 Console.WriteLine(disco.Error);
                 return;
             }
-
             // request token
             var tokenResponse = await client.RequestClientCredentialsTokenAsync(new ClientCredentialsTokenRequest
             {
