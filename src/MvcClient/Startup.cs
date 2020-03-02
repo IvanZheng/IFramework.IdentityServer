@@ -21,7 +21,7 @@ namespace MvcClient
         {
             IdentityModelEventSource.ShowPII = true;
 
-            services.AddMvc();
+            services.AddMvc(options => options.EnableEndpointRouting = false);
 
             JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Clear();
 

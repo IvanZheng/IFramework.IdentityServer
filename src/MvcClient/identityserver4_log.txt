@@ -100,3 +100,9 @@ System.InvalidOperationException: IDX20803: Unable to obtain configuration from:
 2020-03-01 15:11:26.557 +08:00 [INF] AuthenticationScheme: Cookies signed out.
 2020-03-01 15:11:26.558 +08:00 [INF] AuthenticationScheme: oidc signed out.
 2020-03-01 15:29:25.192 +08:00 [INF] AuthenticationScheme: oidc was challenged.
+2020-03-02 11:49:22.062 +08:00 [INF] AuthenticationScheme: oidc was challenged.
+2020-03-02 11:49:24.843 +08:00 [INF] AuthenticationScheme: Cookies signed in.
+2020-03-02 12:00:23.257 +08:00 [INF] AuthenticationScheme: Cookies signed out.
+2020-03-02 12:00:23.948 +08:00 [INF] AuthenticationScheme: oidc signed out.
+2020-03-02 12:00:27.347 +08:00 [INF] AuthenticationScheme: oidc was challenged.
+2020-03-02 12:00:29.866 +08:00 [INF] AuthenticationScheme: Cookies signed in.

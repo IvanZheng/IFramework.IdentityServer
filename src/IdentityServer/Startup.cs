@@ -51,7 +51,7 @@ namespace IdentityServerAspNetIdentity
             services.AddScoped<IUserClaimsPrincipalFactory<ApplicationUser>, UserClaimsPrincipalFactory>();
             services.Replace(new ServiceDescriptor(typeof(IRoleValidator<ApplicationRole>), typeof(RoleValidator), ServiceLifetime.Scoped));
 
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            services.AddMvc(options => options.EnableEndpointRouting = false).SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
             services.AddLocalApiAuthentication();
             //services.Configure<IISOptions>(iis =>
             //{
@@ -96,15 +96,7 @@ namespace IdentityServerAspNetIdentity
                 //throw new Exception("need to configure key material");
             }
 
-            services.AddAuthentication()
-                    .AddGoogle(options =>
-                    {
-                        // register your IdentityServer with Google at https://console.developers.google.com
-                        // enable the Google+ API
-                        // set the redirect URI to http://localhost:5000/signin-google
-                        options.ClientId = "copy client ID from Google here";
-                        options.ClientSecret = "copy client secret from Google here";
-                    });
+            services.AddAuthentication();
         }
 
         public void Configure(IApplicationBuilder app)
@@ -112,7 +104,6 @@ namespace IdentityServerAspNetIdentity
             if (Environment.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-                app.UseDatabaseErrorPage();
             }
             else
             {
