@@ -18,19 +18,15 @@ namespace Api
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvcCore()
-                .AddAuthorization(options =>
-                {
-                    options.AddPolicy("policy1", builder =>
+                    .AddAuthorization(options =>
                     {
-                        // require scope1
-                        builder.RequireScope("api1", "apiall");
+                        options.AddPolicy("policy1", builder =>
+                        {
+                            // require scope1
+                            builder.RequireScope("api1", "apiall");
+                        });
+                        options.AddPolicy("policy2", builder => { builder.RequireScope("api1", "api2", "apiall"); });
                     });
-                    options.AddPolicy("policy2", builder =>
-                    {
-                        builder.RequireScope("api1", "api2", "apiall");
-                    });
-                })
-                .AddJsonFormatters();
 
             
             //services.AddAuthentication("Bearer")

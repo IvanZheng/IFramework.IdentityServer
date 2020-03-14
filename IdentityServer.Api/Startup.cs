@@ -44,8 +44,7 @@ namespace IdentityServer.Api
             var migrationsAssembly = typeof(ApplicationDbContext).GetTypeInfo().Assembly.GetName().Name;
             services.AddMvcCore()
                     .AddAuthorizationPolicies()
-                    .AddApiExplorer()
-                    .AddJsonFormatters();
+                    .AddApiExplorer();
             services.AddDbContextPool<ApplicationDbContext>(options =>
                                                                 options.UseSqlServer(connectionString));
 
