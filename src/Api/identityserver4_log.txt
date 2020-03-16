@@ -480,3 +480,97 @@ Refit.ApiException: Response status code does not indicate success: 403 (Forbidd
 2019-08-29 16:10:00.150 +08:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
 2019-08-29 16:10:00.155 +08:00 [INF] {"RequestUri":"http://localhost:9001/permissions?name=Api.ApiManagementPermissions.Post&providerType=User&providerKey=e1804e85-12e8-40d4-a372-d3fdc276c3d1&scopeId=3d0a1642-c2e1-4031-96a9-4fc651c245c1","Method":{"Method":"GET"},"responseBody":null,"StatusCode":200,"costTime":3.7402}
 2019-08-29 16:10:00.155 +08:00 [INF] AuthenticationScheme: Bearer was forbidden.
+2020-03-16 20:34:39.504 +08:00 [FTL] Application startup exception
+System.InvalidOperationException: Endpoint Routing does not support 'IApplicationBuilder.UseMvc(...)'. To use 'IApplicationBuilder.UseMvc' set 'MvcOptions.EnableEndpointRouting = false' inside 'ConfigureServices(...).
+   at Microsoft.AspNetCore.Builder.MvcApplicationBuilderExtensions.UseMvc(IApplicationBuilder app, Action`1 configureRoutes)
+   at Microsoft.AspNetCore.Builder.MvcApplicationBuilderExtensions.UseMvc(IApplicationBuilder app)
+   at Api.Startup.Configure(IApplicationBuilder app) in D:\Workspace\IFramework.IdentityServer\src\Api\Startup.cs:line 86
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Object[] arguments, Signature sig, Boolean constructor, Boolean wrapExceptions)
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at Microsoft.AspNetCore.Hosting.ConfigureBuilder.Invoke(Object instance, IApplicationBuilder builder)
+   at Microsoft.AspNetCore.Hosting.ConfigureBuilder.<>c__DisplayClass4_0.<Build>b__0(IApplicationBuilder builder)
+   at Microsoft.AspNetCore.Hosting.ConventionBasedStartup.Configure(IApplicationBuilder app)
+   at Microsoft.AspNetCore.Mvc.Filters.MiddlewareFilterBuilderStartupFilter.<>c__DisplayClass0_0.<Configure>g__MiddlewareFilterBuilder|0(IApplicationBuilder builder)
+   at Microsoft.AspNetCore.Server.IIS.Core.IISServerSetupFilter.<>c__DisplayClass2_0.<Configure>b__0(IApplicationBuilder app)
+   at Microsoft.AspNetCore.HostFilteringStartupFilter.<>c__DisplayClass0_0.<Configure>b__0(IApplicationBuilder app)
+   at Microsoft.AspNetCore.Hosting.WebHost.BuildApplication()
+2020-03-16 20:35:54.021 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2020-03-16 20:36:28.789 +08:00 [INF] Successfully validated the token.
+2020-03-16 20:36:28.793 +08:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2020-03-16 20:36:28.905 +08:00 [ERR] Connection ID "18230571301796315147", Request ID "8000000c-0002-fd00-b63f-84710c7967bb": An unhandled exception was thrown by the application.
+Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: 'System.Text.Json.JsonElement' does not contain a definition for 'ScopeId'
+   at CallSite.Target(Closure , CallSite , Object )
+   at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)
+   at Api.Controllers.IdentityController.Post(Object data) in D:\Workspace\IFramework.IdentityServer\src\Api\Controllers\IdentityController.cs:line 37
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Server.IIS.Core.IISHttpContextOfT`1.ProcessRequestAsync()
+2020-03-16 20:37:58.530 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2020-03-16 20:38:32.193 +08:00 [INF] Successfully validated the token.
+2020-03-16 20:38:32.194 +08:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2020-03-16 20:38:32.198 +08:00 [ERR] Connection ID "18374686489872171026", Request ID "80000013-0002-ff00-b63f-84710c7967bb": An unhandled exception was thrown by the application.
+Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: 'System.Text.Json.JsonElement' does not contain a definition for 'ScopeId'
+   at CallSite.Target(Closure , CallSite , Object )
+   at Api.Controllers.IdentityController.Post(Object data) in D:\Workspace\IFramework.IdentityServer\src\Api\Controllers\IdentityController.cs:line 37
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Server.IIS.Core.IISHttpContextOfT`1.ProcessRequestAsync()
+2020-03-16 20:40:07.114 +08:00 [INF] Successfully validated the token.
+2020-03-16 20:40:07.147 +08:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2020-03-16 20:48:10.013 +08:00 [INF] Successfully validated the token.
+2020-03-16 20:48:10.044 +08:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2020-03-16 20:48:13.968 +08:00 [ERR] Connection ID "18374686489872171028", Request ID "80000015-0002-ff00-b63f-84710c7967bb": An unhandled exception was thrown by the application.
+Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: 'System.Text.Json.JsonElement' does not contain a definition for 'ScopeId'
+   at CallSite.Target(Closure , CallSite , Object )
+   at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)
+   at Api.Controllers.IdentityController.Post(Object data) in D:\Workspace\IFramework.IdentityServer\src\Api\Controllers\IdentityController.cs:line 37
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Server.IIS.Core.IISHttpContextOfT`1.ProcessRequestAsync()
+2020-03-16 20:55:29.984 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2020-03-16 20:55:41.321 +08:00 [INF] Successfully validated the token.
+2020-03-16 20:55:41.324 +08:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2020-03-16 20:55:41.420 +08:00 [ERR] Connection ID "18158513707758387201", Request ID "80000002-0002-fc00-b63f-84710c7967bb": An unhandled exception was thrown by the application.
+Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: 'System.Text.Json.JsonElement' does not contain a definition for 'ScopeId'
+   at CallSite.Target(Closure , CallSite , Object )
+   at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)
+   at Api.Controllers.IdentityController.Post(Object data) in D:\Workspace\IFramework.IdentityServer\src\Api\Controllers\IdentityController.cs:line 37
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Server.IIS.Core.IISHttpContextOfT`1.ProcessRequestAsync()

@@ -18,6 +18,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
+using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Logging;
@@ -42,7 +43,7 @@ namespace IdentityServer.Api
             IdentityModelEventSource.ShowPII = true;
             var connectionString = Configuration.GetConnectionString("DefaultConnection");
             var migrationsAssembly = typeof(ApplicationDbContext).GetTypeInfo().Assembly.GetName().Name;
-            services.AddMvcCore()
+            services.AddMvcCore(options => options.EnableEndpointRouting = false)
                     .AddAuthorizationPolicies()
                     .AddApiExplorer();
             services.AddDbContextPool<ApplicationDbContext>(options =>
@@ -105,7 +106,7 @@ namespace IdentityServer.Api
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env,  AdminApiConfiguration adminApiConfiguration)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env,  AdminApiConfiguration adminApiConfiguration)
         {
             if (env.IsDevelopment())
             {

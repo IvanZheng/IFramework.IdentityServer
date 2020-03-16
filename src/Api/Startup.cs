@@ -17,7 +17,7 @@ namespace Api
     {
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvcCore()
+            services.AddMvcCore(options => options.EnableEndpointRouting = false)
                     .AddAuthorization(options =>
                     {
                         options.AddPolicy("policy1", builder =>
