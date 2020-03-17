@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Threading.Tasks;
 using IdentityServer.Core;
 using IdentityServer.Core.Managers;
 using IdentityServer4;
@@ -27,11 +28,20 @@ namespace IdentityServer.Api.Controllers
                                          string scopeId,
                                          string tenantId)
         {
-            return _permissionManager.IsGrantedAsync(name,
-                                                     providerType,
-                                                     providerKey,
-                                                     scopeId,
-                                                     tenantId);
+            try
+            {
+                return _permissionManager.IsGrantedAsync(name,
+                                                         providerType,
+                                                         providerKey,
+                                                         scopeId,
+                                                         tenantId);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
+           
         }
     }
 }

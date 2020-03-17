@@ -180,7 +180,7 @@ namespace IdentityServerAspNetIdentity
                     AllowedGrantTypes = GrantTypes.CodeAndClientCredentials,
                     ClientSecrets = {new Secret("secret".Sha256())},
                     RedirectUris = {"http://localhost:8082/ui/login"},
-                    PostLogoutRedirectUris = {"http://localhost:8082/ui/logout"},
+                    BackChannelLogoutUri = "http://10.100.6.35:5003/ui/logout",
                     AllowedScopes = {
                         IdentityServerConstants.StandardScopes.OpenId, 
                         IdentityServerConstants.StandardScopes.Profile,
@@ -215,6 +215,8 @@ namespace IdentityServerAspNetIdentity
                     ClientSecrets = {new Secret("secret".Sha256())},
                     RedirectUris = {"http://localhost:5002/signin-oidc"},
                     PostLogoutRedirectUris = {"http://localhost:5002/signout-callback-oidc"},
+                    BackChannelLogoutUri = "http://localhost:5002/home/ForceLogout",
+                    AccessTokenType = AccessTokenType.Jwt,
                     AllowedScopes = {
                         IdentityServerConstants.StandardScopes.OpenId, 
                         IdentityServerConstants.StandardScopes.Profile,
@@ -232,8 +234,9 @@ namespace IdentityServerAspNetIdentity
                     RequireConsent = false,
                     AllowedGrantTypes = GrantTypes.Hybrid,
                     ClientSecrets = {new Secret("secret".Sha256())},
-                    RedirectUris = {"http://localhost:5003/signin-oidc"},
-                    PostLogoutRedirectUris = {"http://localhost:5003/signout-callback-oidc"},
+                    RedirectUris = {"http://10.100.6.35:5003/signin-oidc"},
+                    PostLogoutRedirectUris = {"http://10.100.6.35:5003/signout-callback-oidc"},
+                    BackChannelLogoutUri = "http://10.100.6.35:5003/home/ForceLogout",
                     AllowedScopes = {
                         IdentityServerConstants.StandardScopes.OpenId, 
                         IdentityServerConstants.StandardScopes.Profile,

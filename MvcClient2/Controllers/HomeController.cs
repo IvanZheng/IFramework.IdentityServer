@@ -59,5 +59,11 @@ namespace MvcClient2.Controllers
             ViewBag.Json = content;
             return View("json");
         }
+
+        [HttpPost("[action]")]
+        public async Task ForceLogout()
+        {
+            await HttpContext.SignOutAsync();
+        }
     }
 }

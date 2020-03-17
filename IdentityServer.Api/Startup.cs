@@ -22,6 +22,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Logging;
+using Microsoft.OpenApi.Models;
 using Swashbuckle.AspNetCore.Swagger;
 
 namespace IdentityServer.Api
@@ -77,17 +78,24 @@ namespace IdentityServer.Api
             services.AddSwaggerGen(options =>
             {
                 options.SwaggerDoc(ApiConfigurationConsts.ApiVersionV1, 
-                                   new Info { 
+                                   new OpenApiInfo { 
                                        Title = ApiConfigurationConsts.ApiName,
                                        Version = ApiConfigurationConsts.ApiVersionV1
                                    });
 
-                options.AddSecurityDefinition("oauth2", new OAuth2Scheme
+                options.AddSecurityDefinition("oauth2", new OpenApiSecurityScheme
                 {
-                    Flow = "implicit",
-                    AuthorizationUrl = $"{adminApiConfiguration.IdentityServerBaseUrl}/connect/authorize",
-                    Scopes = new Dictionary<string, string> {
-                        { adminApiConfiguration.OidcApiName, ApiConfigurationConsts.ApiName }
+                    Type = SecuritySchemeType.OAuth2,
+                    Flows = new OpenApiOAuthFlows
+                    {
+                        Implicit = new OpenApiOAuthFlow
+                        {
+                            AuthorizationUrl = new Uri($"{adminApiConfiguration.IdentityServerBaseUrl}/connect/authorize"),
+                            Scopes = new Dictionary<string, string>
+                            {
+                                { adminApiConfiguration.OidcApiName, ApiConfigurationConsts.ApiName }
+                            }
+                        }
                     }
                 });
 

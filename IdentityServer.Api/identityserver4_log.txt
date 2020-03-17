@@ -471,3 +471,31 @@ System.InvalidOperationException: Endpoint Routing does not support 'IApplicatio
    at Microsoft.AspNetCore.Server.IIS.Core.IISServerSetupFilter.<>c__DisplayClass2_0.<Configure>b__0(IApplicationBuilder app)
    at Microsoft.AspNetCore.HostFilteringStartupFilter.<>c__DisplayClass0_0.<Configure>b__0(IApplicationBuilder app)
    at Microsoft.AspNetCore.Hosting.WebHost.BuildApplication()
+2020-03-17 14:56:14.688 +08:00 [FTL] Application startup exception
+System.MissingMethodException: Method not found: 'Void Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware..ctor(Microsoft.AspNetCore.Http.RequestDelegate, Microsoft.AspNetCore.Hosting.IHostingEnvironment, Microsoft.Extensions.Options.IOptions`1<Microsoft.AspNetCore.Builder.StaticFileOptions>, Microsoft.Extensions.Logging.ILoggerFactory)'.
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.CreateStaticFileMiddleware(RequestDelegate next, IHostingEnvironment hostingEnv, ILoggerFactory loggerFactory, SwaggerUIOptions options)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware..ctor(RequestDelegate next, IHostingEnvironment hostingEnv, ILoggerFactory loggerFactory, SwaggerUIOptions options)
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Object[] arguments, Signature sig, Boolean constructor, Boolean wrapExceptions)
+   at System.Reflection.RuntimeConstructorInfo.Invoke(BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at Microsoft.Extensions.Internal.ActivatorUtilities.ConstructorMatcher.CreateInstance(IServiceProvider provider)
+   at Microsoft.Extensions.Internal.ActivatorUtilities.CreateInstance(IServiceProvider provider, Type instanceType, Object[] parameters)
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.<>c__DisplayClass4_0.<UseMiddleware>b__0(RequestDelegate next)
+   at Microsoft.AspNetCore.Builder.ApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Hosting.WebHost.BuildApplication()
+2020-03-17 14:57:22.906 +08:00 [FTL] Application startup exception
+System.MissingMethodException: Method not found: 'Void Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware..ctor(Microsoft.AspNetCore.Http.RequestDelegate, Microsoft.AspNetCore.Hosting.IHostingEnvironment, Microsoft.Extensions.Options.IOptions`1<Microsoft.AspNetCore.Builder.StaticFileOptions>, Microsoft.Extensions.Logging.ILoggerFactory)'.
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.CreateStaticFileMiddleware(RequestDelegate next, IHostingEnvironment hostingEnv, ILoggerFactory loggerFactory, SwaggerUIOptions options)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware..ctor(RequestDelegate next, IHostingEnvironment hostingEnv, ILoggerFactory loggerFactory, SwaggerUIOptions options)
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Object[] arguments, Signature sig, Boolean constructor, Boolean wrapExceptions)
+   at System.Reflection.RuntimeConstructorInfo.Invoke(BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at Microsoft.Extensions.Internal.ActivatorUtilities.ConstructorMatcher.CreateInstance(IServiceProvider provider)
+   at Microsoft.Extensions.Internal.ActivatorUtilities.CreateInstance(IServiceProvider provider, Type instanceType, Object[] parameters)
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.<>c__DisplayClass4_0.<UseMiddleware>b__0(RequestDelegate next)
+   at Microsoft.AspNetCore.Builder.ApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Hosting.WebHost.BuildApplication()
+2020-03-17 15:54:05.440 +08:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2020-03-17 16:08:11.269 +08:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2020-03-17 16:08:19.668 +08:00 [INF] Successfully validated the token.
+2020-03-17 16:08:19.676 +08:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2020-03-17 16:08:20.685 +08:00 [INF] Successfully validated the token.
+2020-03-17 16:08:20.685 +08:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.

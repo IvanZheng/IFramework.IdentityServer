@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.Text.Json;
 using System.Threading.Tasks;
 using Api.Authorizations;
 using Api.Security;
@@ -32,24 +33,36 @@ namespace Api.Controllers
         [Authorize("policy2")]
         //[Authorize(ApiManagementPermissions.Post)]
         [HttpPost]
-        public async Task<IActionResult> Post([FromBody] dynamic data)
+        public async Task<IActionResult> Post([FromBody] JsonElement data)
         {
-            var result = await _authorizationService.AuthorizePermissionAsync(User,
-                                                                              (string)data.ScopeId,
-                                                                              ApiManagementPermissions.Post);
-            if (result.Succeeded)
+            try
             {
-                return new JsonResult(data);
-            }
-            else if (User.Identity.IsAuthenticated)
-            {
-                return new ForbidResult();
-            }
-            else
-            {
-                return new ChallengeResult();
+                var scopeId = data.GetProperty("ScopeId").GetString();
+                var result = await _authorizationService.AuthorizePermissionAsync(User,
+                                                                                  scopeId,
+                                                                                  ApiManagementPermissions.Post);
 
+                if (result.Succeeded)
+                {
+                    return new JsonResult(data);
+                }
+                else if (User.Identity.IsAuthenticated)
+                {
+                    return new ForbidResult();
+                }
+                else
+                {
+                    return new ChallengeResult();
+
+                }
             }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
+           
+          
         }
     }
 }
