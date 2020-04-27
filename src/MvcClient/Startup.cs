@@ -12,6 +12,7 @@ using Microsoft.AspNetCore.Authentication.OpenIdConnect;
 using Microsoft.IdentityModel.Logging;
 using MvcClient.Model;
 using Newtonsoft.Json;
+using OAuth2Client;
 
 namespace MvcClient
 {
@@ -24,6 +25,9 @@ namespace MvcClient
             services.AddMvc(options => options.EnableEndpointRouting = false);
 
             JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Clear();
+
+
+            //services.AddOAuth2Client<>()
 
             services.AddAuthentication(options =>
                 {

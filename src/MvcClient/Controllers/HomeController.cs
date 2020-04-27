@@ -33,7 +33,13 @@ namespace MvcClient.Controllers
             return View();
         }
 
-        public async Task<IActionResult> CallApi()
+        //public async Task<IActionResult> CallApi()
+        //{
+
+        //}
+
+
+        public async Task<IActionResult> CallApi2()
         {
             var accessToken = await HttpContext.GetTokenAsync("access_token");
 

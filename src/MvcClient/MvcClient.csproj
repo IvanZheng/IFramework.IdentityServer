@@ -19,6 +19,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\OAuth2Client\OAuth2Client.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Update="Views\Shared\json.cshtml">
       <Pack>$(IncludeRazorContentInPack)</Pack>
     </Content>
