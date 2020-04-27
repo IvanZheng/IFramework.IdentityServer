@@ -23,11 +23,24 @@ namespace OAuth2Client
         public static IHttpClientBuilder AddOAuth2Client<TService>(this IServiceCollection services,
                                                                    TokenRequest tokenRequest,
                                                                    RefitSettings settings = null)
+            where TService: class
+
+        {
+            return services.AddOAuth2Client<TService>(p => tokenRequest, settings);
+        }
+
+        public static IHttpClientBuilder AddOAuth2Client<TService>(this IServiceCollection services,
+                                                                   Func<IServiceProvider, TokenRequest> getTokenRequest,
+                                                                   RefitSettings settings = null)
         where TService: class
         {
             return services.AddRefitClient<TService>(settings)
-                           .AddHttpMessageHandler(p => new DefaultAuthenticatedHttpClientHandler(tokenRequest,
-                                                                                                 p.GetService<IHttpClientFactory>()));
+                           .AddHttpMessageHandler(p =>
+                           {
+                               var tokenRequest = getTokenRequest(p);
+                               return new DefaultAuthenticatedHttpClientHandler(tokenRequest,
+                                                                                p.GetService<IHttpClientFactory>());
+                           });
         }
 
     }
