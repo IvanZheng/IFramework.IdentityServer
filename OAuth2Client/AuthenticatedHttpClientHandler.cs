@@ -19,13 +19,18 @@ namespace OAuth2Client
         protected DateTime TokenExpiredDateTime { get; set; } 
         protected virtual Func<HttpRequestMessage, Task<string>> GetToken => async request =>
         {
+            if (!string.IsNullOrWhiteSpace(TokenResponse?.AccessToken) && (TokenExpiredDateTime - DateTime.Now).TotalMinutes >= 1)
+            {
+                return TokenResponse.AccessToken;
+            }
             //Asynchronously wait to enter the Semaphore. If no-one has been granted access to the Semaphore, code execution will proceed, otherwise this thread waits here until the semaphore is released 
             await _semaphoreSlim.WaitAsync();
             try
             {
+                var now = DateTime.Now;
                 if (TokenResponse == null ||
-                    TokenExpiredDateTime <= DateTime.Now ||
-                    string.IsNullOrWhiteSpace(TokenResponse.RefreshToken) && (TokenExpiredDateTime - DateTime.Now).TotalMinutes < 1)
+                    TokenExpiredDateTime <= now ||
+                    string.IsNullOrWhiteSpace(TokenResponse.RefreshToken) && (TokenExpiredDateTime - now).TotalMinutes < 1)
                 {
                     if (TokenRequest is ClientCredentialsTokenRequest clientCredentialsTokenRequest)
                     {
@@ -47,8 +52,14 @@ namespace OAuth2Client
                     {
                         throw new Exception($"Invalid TokenRequest {Newtonsoft.Json.JsonConvert.SerializeObject(TokenRequest)}");
                     }
+                    if (TokenResponse.IsError)
+                    {
+                        throw new Exception(TokenResponse.Error);
+                    }
+
+                    TokenExpiredDateTime = now.AddSeconds(TokenResponse.ExpiresIn);
                 }
-                else if (!string.IsNullOrWhiteSpace(TokenResponse.RefreshToken) && (TokenExpiredDateTime - DateTime.Now).TotalMinutes < 5)
+                else if (!string.IsNullOrWhiteSpace(TokenResponse.RefreshToken) && (TokenExpiredDateTime - now).TotalMinutes < 5)
                 {
                     // Refresh Token
                     TokenResponse = await InternalHttpClient.RequestRefreshTokenAsync(new RefreshTokenRequest
@@ -58,14 +69,13 @@ namespace OAuth2Client
                         ClientId = TokenRequest.ClientId,
                         ClientSecret = TokenRequest.ClientSecret
                     });
-                }
+                    if (TokenResponse.IsError)
+                    {
+                        throw new Exception(TokenResponse.Error);
+                    }
 
-                if (TokenResponse.IsError)
-                {
-                    throw new Exception(TokenResponse.Error);
+                    TokenExpiredDateTime = now.AddSeconds(TokenResponse.ExpiresIn);
                 }
-
-                TokenExpiredDateTime = DateTime.Now.AddSeconds(TokenResponse.ExpiresIn);
             }
             finally
             {
@@ -73,7 +83,7 @@ namespace OAuth2Client
                 //This is why it is important to do the Release within a try...finally clause; program execution may crash or take a different path, this way you are guaranteed execution
                 _semaphoreSlim.Release();
             }
-            return TokenResponse.AccessToken;
+            return TokenResponse?.AccessToken;
         };
 
         protected AuthenticatedHttpClientHandler(IHttpClientFactory httpClientFactory)

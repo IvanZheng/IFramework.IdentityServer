@@ -875,3 +875,5 @@ Refit.ApiException: Response status code does not indicate success: 401 (Unautho
 2020-04-28 16:20:09.645 +08:00 [INF] AuthenticationScheme: oidc signed out.
 2020-04-28 16:20:12.406 +08:00 [INF] AuthenticationScheme: oidc was challenged.
 2020-04-28 16:20:14.188 +08:00 [INF] AuthenticationScheme: Cookies signed in.
+2020-04-28 22:01:47.767 +08:00 [INF] AuthenticationScheme: oidc was challenged.
+2020-04-28 22:01:51.227 +08:00 [INF] AuthenticationScheme: Cookies signed in.

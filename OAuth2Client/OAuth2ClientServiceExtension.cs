@@ -43,7 +43,7 @@ namespace OAuth2Client
             where TService : class
         {
             return services.AddRefitClient<TService>(settings)
-                           .ConfigureHttpClient(c => c.BaseAddress = new Uri(address))
+                           .ConfigureHttpClient((p, c) => c.BaseAddress = new Uri(address))
                            .AddHttpMessageHandler(p =>
                            {
                                var tokenRequest = getTokenRequest(p);
