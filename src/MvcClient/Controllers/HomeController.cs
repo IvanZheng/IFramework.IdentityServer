@@ -56,11 +56,11 @@ namespace MvcClient.Controllers
         public async Task<IActionResult> CallApi2()
         {
             var accessToken = await HttpContext.GetTokenAsync("access_token");
-
-            var client = new HttpClient();
-            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
-
             var content = await _api.GetIdentity("scopeId", $"Bearer {accessToken}");
+
+            //
+            //var client = new HttpClient();
+            //client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
             //var content = await client.GetStringAsync("http://localhost:5001/identity?scopeId=aaa");
 
             //var response = await client.PostAsJsonAsync("http://localhost:5001/identity", 
