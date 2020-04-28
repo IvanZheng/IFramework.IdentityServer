@@ -874,3 +874,94 @@ Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime
 2020-04-28 12:14:38.862 +08:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
 2020-04-28 12:14:40.775 +08:00 [INF] Successfully validated the token.
 2020-04-28 12:14:40.775 +08:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2020-04-28 13:21:11.317 +08:00 [INF] Successfully validated the token.
+2020-04-28 13:21:11.318 +08:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2020-04-28 13:22:41.496 +08:00 [INF] Successfully validated the token.
+2020-04-28 13:22:41.497 +08:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2020-04-28 13:26:35.765 +08:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo: '[PII is hidden]', Current time: '[PII is hidden]'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateTokenPayload(JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+2020-04-28 13:26:35.781 +08:00 [INF] BearerIdentityServerAuthenticationJwt was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo: '[PII is hidden]', Current time: '[PII is hidden]'.
+2020-04-28 13:26:35.782 +08:00 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo: '[PII is hidden]', Current time: '[PII is hidden]'.
+2020-04-28 13:26:35.789 +08:00 [INF] AuthenticationScheme: BearerIdentityServerAuthenticationJwt was challenged.
+2020-04-28 13:26:35.789 +08:00 [INF] AuthenticationScheme: Bearer was challenged.
+2020-04-28 13:27:06.303 +08:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo: '[PII is hidden]', Current time: '[PII is hidden]'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateTokenPayload(JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+2020-04-28 13:27:06.305 +08:00 [INF] BearerIdentityServerAuthenticationJwt was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo: '[PII is hidden]', Current time: '[PII is hidden]'.
+2020-04-28 13:27:06.305 +08:00 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo: '[PII is hidden]', Current time: '[PII is hidden]'.
+2020-04-28 13:27:06.306 +08:00 [INF] AuthenticationScheme: BearerIdentityServerAuthenticationJwt was challenged.
+2020-04-28 13:27:06.307 +08:00 [INF] AuthenticationScheme: Bearer was challenged.
+2020-04-28 13:27:52.341 +08:00 [INF] Successfully validated the token.
+2020-04-28 13:27:52.341 +08:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2020-04-28 13:28:02.216 +08:00 [INF] Successfully validated the token.
+2020-04-28 13:28:02.217 +08:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2020-04-28 13:28:03.220 +08:00 [INF] Successfully validated the token.
+2020-04-28 13:28:03.220 +08:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2020-04-28 13:33:04.582 +08:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo: '[PII is hidden]', Current time: '[PII is hidden]'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateTokenPayload(JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+2020-04-28 13:33:04.583 +08:00 [INF] BearerIdentityServerAuthenticationJwt was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo: '[PII is hidden]', Current time: '[PII is hidden]'.
+2020-04-28 13:33:04.583 +08:00 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo: '[PII is hidden]', Current time: '[PII is hidden]'.
+2020-04-28 13:33:04.585 +08:00 [INF] AuthenticationScheme: BearerIdentityServerAuthenticationJwt was challenged.
+2020-04-28 13:33:04.585 +08:00 [INF] AuthenticationScheme: Bearer was challenged.
+2020-04-28 15:08:00.399 +08:00 [INF] Successfully validated the token.
+2020-04-28 15:08:00.400 +08:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2020-04-28 15:31:38.861 +08:00 [INF] Successfully validated the token.
+2020-04-28 15:31:38.861 +08:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2020-04-28 15:31:54.552 +08:00 [INF] Successfully validated the token.
+2020-04-28 15:31:54.552 +08:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2020-04-28 15:59:58.854 +08:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo: '[PII is hidden]', Current time: '[PII is hidden]'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateTokenPayload(JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+2020-04-28 15:59:58.855 +08:00 [INF] BearerIdentityServerAuthenticationJwt was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo: '[PII is hidden]', Current time: '[PII is hidden]'.
+2020-04-28 15:59:58.856 +08:00 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo: '[PII is hidden]', Current time: '[PII is hidden]'.
+2020-04-28 15:59:58.857 +08:00 [INF] AuthenticationScheme: BearerIdentityServerAuthenticationJwt was challenged.
+2020-04-28 15:59:58.857 +08:00 [INF] AuthenticationScheme: Bearer was challenged.
+2020-04-28 16:00:20.016 +08:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo: '[PII is hidden]', Current time: '[PII is hidden]'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateTokenPayload(JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+2020-04-28 16:00:20.016 +08:00 [INF] BearerIdentityServerAuthenticationJwt was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo: '[PII is hidden]', Current time: '[PII is hidden]'.
+2020-04-28 16:00:20.016 +08:00 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo: '[PII is hidden]', Current time: '[PII is hidden]'.
+2020-04-28 16:00:20.018 +08:00 [INF] AuthenticationScheme: BearerIdentityServerAuthenticationJwt was challenged.
+2020-04-28 16:00:20.018 +08:00 [INF] AuthenticationScheme: Bearer was challenged.
+2020-04-28 16:18:39.799 +08:00 [INF] Successfully validated the token.
+2020-04-28 16:18:39.799 +08:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2020-04-28 16:39:30.206 +08:00 [INF] Successfully validated the token.
+2020-04-28 16:39:30.228 +08:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2020-04-28 16:39:33.241 +08:00 [INF] Successfully validated the token.
+2020-04-28 16:39:33.241 +08:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2020-04-28 16:39:35.554 +08:00 [INF] Successfully validated the token.
+2020-04-28 16:39:35.555 +08:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2020-04-28 16:39:37.521 +08:00 [INF] Successfully validated the token.
+2020-04-28 16:39:37.521 +08:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2020-04-28 16:39:39.319 +08:00 [INF] Successfully validated the token.
+2020-04-28 16:39:39.319 +08:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2020-04-28 16:39:40.695 +08:00 [INF] Successfully validated the token.
+2020-04-28 16:39:40.696 +08:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2020-04-28 16:39:42.158 +08:00 [INF] Successfully validated the token.
+2020-04-28 16:39:42.159 +08:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2020-04-28 16:39:43.678 +08:00 [INF] Successfully validated the token.
+2020-04-28 16:39:43.678 +08:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2020-04-28 16:39:45.203 +08:00 [INF] Successfully validated the token.
+2020-04-28 16:39:45.203 +08:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.

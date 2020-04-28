@@ -1,4 +1,7 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.IdentityModel.Tokens.Jwt;
+using System.Linq;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Authentication;
@@ -6,6 +9,7 @@ using System.Net.Http;
 using Newtonsoft.Json.Linq;
 using System.Net.Http.Headers;
 using System.Threading;
+using OAuth2Client;
 
 namespace MvcClient.Controllers
 {
@@ -49,7 +53,7 @@ namespace MvcClient.Controllers
         }
 
 
-        public async Task<IActionResult> CallApi2(CancellationToken token)
+        public async Task<IActionResult> CallApi2()
         {
             var accessToken = await HttpContext.GetTokenAsync("access_token");
 

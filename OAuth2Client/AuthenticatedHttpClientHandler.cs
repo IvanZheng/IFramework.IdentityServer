@@ -25,7 +25,7 @@ namespace OAuth2Client
             {
                 if (TokenResponse == null ||
                     TokenExpiredDateTime <= DateTime.Now ||
-                    string.IsNullOrWhiteSpace(TokenResponse.RefreshToken) && (TokenExpiredDateTime - DateTime.Now).TotalMinutes < 5)
+                    string.IsNullOrWhiteSpace(TokenResponse.RefreshToken) && (TokenExpiredDateTime - DateTime.Now).TotalMinutes < 1)
                 {
                     if (TokenRequest is ClientCredentialsTokenRequest clientCredentialsTokenRequest)
                     {
