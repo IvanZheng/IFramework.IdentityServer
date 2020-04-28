@@ -59,7 +59,7 @@ namespace OAuth2Client
 
                     TokenExpiredDateTime = now.AddSeconds(TokenResponse.ExpiresIn);
                 }
-                else if (!string.IsNullOrWhiteSpace(TokenResponse.RefreshToken) && (TokenExpiredDateTime - now).TotalMinutes < 5)
+                else if (!string.IsNullOrWhiteSpace(TokenResponse.RefreshToken) && (TokenExpiredDateTime - now).TotalMinutes < 1)
                 {
                     // Refresh Token
                     TokenResponse = await InternalHttpClient.RequestRefreshTokenAsync(new RefreshTokenRequest
