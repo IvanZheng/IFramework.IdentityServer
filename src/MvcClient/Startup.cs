@@ -27,7 +27,8 @@ namespace MvcClient
                                                       "http://localhost:5000/connect/token",
                                                       "mvc",
                                                       "secret",
-                                                      "api1");
+                                                      "api1",
+                                                      5);
 
             services.AddAuthentication(options =>
                     {

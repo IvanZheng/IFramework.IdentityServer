@@ -11,7 +11,8 @@ namespace OAuth2Client
     public class DefaultAuthenticatedHttpClientHandler: AuthenticatedHttpClientHandler
     {
         public DefaultAuthenticatedHttpClientHandler(TokenRequest tokenRequest,
-                                                     IHttpClientFactory httpClientFactory) : base(httpClientFactory)
+                                                     IHttpClientFactory httpClientFactory,
+                                                     int refreshTokenBeforeTotalSeconds = 60) : base(httpClientFactory, refreshTokenBeforeTotalSeconds)
         {
             TokenRequest = tokenRequest ?? throw new ArgumentNullException(nameof(tokenRequest));
         }

@@ -12,6 +12,7 @@ namespace OAuth2Client
 {
     public abstract class AuthenticatedHttpClientHandler : DelegatingHandler
     {
+        protected int RefreshTokenBeforeTotalSeconds { get; set; }
         private readonly SemaphoreSlim _semaphoreSlim = new SemaphoreSlim(1,1);
         protected readonly HttpClient InternalHttpClient;
         protected abstract TokenRequest TokenRequest { get; }
@@ -19,7 +20,7 @@ namespace OAuth2Client
         protected DateTime TokenExpiredDateTime { get; set; } 
         protected virtual Func<HttpRequestMessage, Task<string>> GetToken => async request =>
         {
-            if (!string.IsNullOrWhiteSpace(TokenResponse?.AccessToken) && (TokenExpiredDateTime - DateTime.Now).TotalMinutes >= 1)
+            if (!string.IsNullOrWhiteSpace(TokenResponse?.AccessToken) && (TokenExpiredDateTime - DateTime.Now).TotalSeconds >= RefreshTokenBeforeTotalSeconds)
             {
                 return TokenResponse.AccessToken;
             }
@@ -30,7 +31,7 @@ namespace OAuth2Client
                 var now = DateTime.Now;
                 if (TokenResponse == null ||
                     TokenExpiredDateTime <= now ||
-                    string.IsNullOrWhiteSpace(TokenResponse.RefreshToken) && (TokenExpiredDateTime - now).TotalMinutes < 1)
+                    string.IsNullOrWhiteSpace(TokenResponse.RefreshToken) && (TokenExpiredDateTime - now).TotalSeconds < RefreshTokenBeforeTotalSeconds)
                 {
                     if (TokenRequest is ClientCredentialsTokenRequest clientCredentialsTokenRequest)
                     {
@@ -59,7 +60,7 @@ namespace OAuth2Client
 
                     TokenExpiredDateTime = now.AddSeconds(TokenResponse.ExpiresIn);
                 }
-                else if (!string.IsNullOrWhiteSpace(TokenResponse.RefreshToken) && (TokenExpiredDateTime - now).TotalMinutes < 1)
+                else if (!string.IsNullOrWhiteSpace(TokenResponse.RefreshToken) && (TokenExpiredDateTime - now).TotalSeconds < RefreshTokenBeforeTotalSeconds)
                 {
                     // Refresh Token
                     TokenResponse = await InternalHttpClient.RequestRefreshTokenAsync(new RefreshTokenRequest
@@ -86,9 +87,10 @@ namespace OAuth2Client
             return TokenResponse?.AccessToken;
         };
 
-        protected AuthenticatedHttpClientHandler(IHttpClientFactory httpClientFactory)
+        protected AuthenticatedHttpClientHandler(IHttpClientFactory httpClientFactory, int refreshTokenBeforeTotalSeconds = 60)
         {
             InternalHttpClient = httpClientFactory.CreateClient(nameof(AuthenticatedHttpClientHandler));
+            RefreshTokenBeforeTotalSeconds = refreshTokenBeforeTotalSeconds;
         }
 
         protected override async Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)

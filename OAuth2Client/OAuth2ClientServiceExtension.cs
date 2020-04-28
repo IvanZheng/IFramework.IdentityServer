@@ -29,16 +29,18 @@ namespace OAuth2Client
         public static IHttpClientBuilder AddOAuth2Client<TService>(this IServiceCollection services,
                                                                    string address,
                                                                    TokenRequest tokenRequest,
+                                                                   int refreshTokenBeforeTotalSeconds = 60,
                                                                    RefitSettings settings = null)
             where TService : class
 
         {
-            return services.AddOAuth2Client<TService>(address, p => tokenRequest, settings);
+            return services.AddOAuth2Client<TService>(address, p => tokenRequest, refreshTokenBeforeTotalSeconds, settings);
         }
 
         public static IHttpClientBuilder AddOAuth2Client<TService>(this IServiceCollection services,
                                                                    string address,
                                                                    Func<IServiceProvider, TokenRequest> getTokenRequest,
+                                                                   int refreshTokenBeforeTotalSeconds = 60,
                                                                    RefitSettings settings = null)
             where TService : class
         {
@@ -48,7 +50,8 @@ namespace OAuth2Client
                            {
                                var tokenRequest = getTokenRequest(p);
                                return new DefaultAuthenticatedHttpClientHandler(tokenRequest,
-                                                                                p.GetService<IHttpClientFactory>());
+                                                                                p.GetService<IHttpClientFactory>(),
+                                                                                refreshTokenBeforeTotalSeconds);
                            });
         }
 
@@ -58,6 +61,7 @@ namespace OAuth2Client
                                                                               string clientId,
                                                                               string clientSecret,
                                                                               string scope,
+                                                                              int refreshTokenBeforeTotalSeconds = 60,
                                                                               IDictionary<string, string> parameters = null,
                                                                               RefitSettings settings = null)
             where TService : class
@@ -70,7 +74,9 @@ namespace OAuth2Client
                                                           ClientSecret = clientSecret,
                                                           Scope = scope,
                                                           Parameters = parameters
-                                                      }, settings);
+                                                      },
+                                                      refreshTokenBeforeTotalSeconds,
+                                                      settings);
         }
     }
 }
