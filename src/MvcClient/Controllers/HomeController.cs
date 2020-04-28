@@ -5,11 +5,18 @@ using Microsoft.AspNetCore.Authentication;
 using System.Net.Http;
 using Newtonsoft.Json.Linq;
 using System.Net.Http.Headers;
+using System.Threading;
 
 namespace MvcClient.Controllers
 {
     public class HomeController : Controller
     {
+        private IApi _api;
+        public HomeController(IApi api)
+        {
+            _api = api;
+        }
+
         public IActionResult Index()
         {
             return View();
@@ -33,30 +40,34 @@ namespace MvcClient.Controllers
             return View();
         }
 
-        //public async Task<IActionResult> CallApi()
-        //{
+        public async Task<IActionResult> CallApi()
+        {
+            var content = await _api.GetIdentity("3d0a1642-c2e1-4031-96a9-4fc651c245c1");
 
-        //}
+            ViewBag.Json = content;
+            return View("json");
+        }
 
 
-        public async Task<IActionResult> CallApi2()
+        public async Task<IActionResult> CallApi2(CancellationToken token)
         {
             var accessToken = await HttpContext.GetTokenAsync("access_token");
 
             var client = new HttpClient();
             client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
-            
+
+            var content = await _api.GetIdentity("scopeId", $"Bearer {accessToken}");
             //var content = await client.GetStringAsync("http://localhost:5001/identity?scopeId=aaa");
 
-            var response = await client.PostAsJsonAsync("http://localhost:5001/identity", 
-                                                        new {ScopeId = "3d0a1642-c2e1-4031-96a9-4fc651c245c1", Name = "test"})
-                                      .ConfigureAwait(false);
-            if (!response.IsSuccessStatusCode)
-            {
-                ViewBag.Json = response.ReasonPhrase;
-                return View("json");
-            }
-            var content = await response.Content.ReadAsStringAsync();
+            //var response = await client.PostAsJsonAsync("http://localhost:5001/identity", 
+            //                                            new {ScopeId = "3d0a1642-c2e1-4031-96a9-4fc651c245c1", Name = "test"})
+            //                          .ConfigureAwait(false);
+            //if (!response.IsSuccessStatusCode)
+            //{
+            //    ViewBag.Json = response.ReasonPhrase;
+            //    return View("json");
+            //}
+            //var content = await response.Content.ReadAsStringAsync();
 
             ViewBag.Json = content;
             return View("json");

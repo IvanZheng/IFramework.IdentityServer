@@ -762,3 +762,115 @@ System.Net.Http.HttpRequestException: No connection could be made because the ta
 2020-03-17 16:08:19.148 +08:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
 2020-03-17 16:08:20.668 +08:00 [INF] {"RequestUri":"http://localhost:9001/permissions?name=Api.ApiManagementPermissions.Post&providerType=User&providerKey=b6b9be69-f6ab-470b-b593-58b13a55c7b4&scopeId=3d0a1642-c2e1-4031-96a9-4fc651c245c1","Method":{"Method":"GET"},"responseBody":null,"StatusCode":200,"costTime":1403.8575}
 2020-03-17 16:08:20.695 +08:00 [INF] {"RequestUri":"http://localhost:9001/permissions?name=Api.ApiManagementPermissions.Post&providerType=Role&providerKey=zero.tenantRole1&scopeId=3d0a1642-c2e1-4031-96a9-4fc651c245c1","Method":{"Method":"GET"},"responseBody":null,"StatusCode":200,"costTime":14.8745}
+2020-04-28 09:46:21.073 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2020-04-28 10:26:47.475 +08:00 [INF] Successfully validated the token.
+2020-04-28 10:26:47.479 +08:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2020-04-28 10:27:24.624 +08:00 [INF] Successfully validated the token.
+2020-04-28 10:27:24.624 +08:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2020-04-28 10:27:45.144 +08:00 [INF] Successfully validated the token.
+2020-04-28 10:27:45.145 +08:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2020-04-28 10:35:22.392 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2020-04-28 10:35:22.398 +08:00 [INF] AuthenticationScheme: BearerIdentityServerAuthenticationJwt was challenged.
+2020-04-28 10:35:22.398 +08:00 [INF] AuthenticationScheme: Bearer was challenged.
+2020-04-28 10:36:27.420 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2020-04-28 10:36:27.513 +08:00 [INF] AuthenticationScheme: BearerIdentityServerAuthenticationJwt was challenged.
+2020-04-28 10:36:27.514 +08:00 [INF] AuthenticationScheme: Bearer was challenged.
+2020-04-28 10:36:34.999 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2020-04-28 10:36:35.001 +08:00 [INF] AuthenticationScheme: BearerIdentityServerAuthenticationJwt was challenged.
+2020-04-28 10:36:35.001 +08:00 [INF] AuthenticationScheme: Bearer was challenged.
+2020-04-28 10:37:46.306 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2020-04-28 10:37:46.398 +08:00 [INF] AuthenticationScheme: BearerIdentityServerAuthenticationJwt was challenged.
+2020-04-28 10:37:46.398 +08:00 [INF] AuthenticationScheme: Bearer was challenged.
+2020-04-28 10:37:53.782 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2020-04-28 10:37:53.783 +08:00 [INF] AuthenticationScheme: BearerIdentityServerAuthenticationJwt was challenged.
+2020-04-28 10:37:53.784 +08:00 [INF] AuthenticationScheme: Bearer was challenged.
+2020-04-28 10:38:42.122 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2020-04-28 10:38:42.127 +08:00 [INF] AuthenticationScheme: BearerIdentityServerAuthenticationJwt was challenged.
+2020-04-28 10:38:42.127 +08:00 [INF] AuthenticationScheme: Bearer was challenged.
+2020-04-28 10:44:38.651 +08:00 [INF] Successfully validated the token.
+2020-04-28 10:44:38.675 +08:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2020-04-28 10:44:40.344 +08:00 [INF] Successfully validated the token.
+2020-04-28 10:44:40.345 +08:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2020-04-28 10:46:39.439 +08:00 [INF] Successfully validated the token.
+2020-04-28 10:46:39.440 +08:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2020-04-28 10:46:41.592 +08:00 [INF] Successfully validated the token.
+2020-04-28 10:46:41.592 +08:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2020-04-28 10:55:57.059 +08:00 [INF] Successfully validated the token.
+2020-04-28 10:55:57.060 +08:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2020-04-28 10:56:31.667 +08:00 [INF] Successfully validated the token.
+2020-04-28 10:56:31.667 +08:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2020-04-28 11:12:53.204 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2020-04-28 11:12:53.299 +08:00 [INF] AuthenticationScheme: BearerIdentityServerAuthenticationJwt was challenged.
+2020-04-28 11:12:53.299 +08:00 [INF] AuthenticationScheme: Bearer was challenged.
+2020-04-28 11:15:24.513 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2020-04-28 11:15:24.515 +08:00 [INF] AuthenticationScheme: BearerIdentityServerAuthenticationJwt was challenged.
+2020-04-28 11:15:24.515 +08:00 [INF] AuthenticationScheme: Bearer was challenged.
+2020-04-28 11:15:29.736 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2020-04-28 11:15:29.741 +08:00 [INF] AuthenticationScheme: BearerIdentityServerAuthenticationJwt was challenged.
+2020-04-28 11:15:29.741 +08:00 [INF] AuthenticationScheme: Bearer was challenged.
+2020-04-28 11:15:31.165 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2020-04-28 11:15:31.167 +08:00 [INF] AuthenticationScheme: BearerIdentityServerAuthenticationJwt was challenged.
+2020-04-28 11:15:31.168 +08:00 [INF] AuthenticationScheme: Bearer was challenged.
+2020-04-28 11:15:36.152 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2020-04-28 11:15:36.154 +08:00 [INF] AuthenticationScheme: BearerIdentityServerAuthenticationJwt was challenged.
+2020-04-28 11:15:36.154 +08:00 [INF] AuthenticationScheme: Bearer was challenged.
+2020-04-28 11:16:42.084 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2020-04-28 11:16:42.086 +08:00 [INF] AuthenticationScheme: BearerIdentityServerAuthenticationJwt was challenged.
+2020-04-28 11:16:42.087 +08:00 [INF] AuthenticationScheme: Bearer was challenged.
+2020-04-28 11:16:47.330 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2020-04-28 11:16:47.332 +08:00 [INF] AuthenticationScheme: BearerIdentityServerAuthenticationJwt was challenged.
+2020-04-28 11:16:47.332 +08:00 [INF] AuthenticationScheme: Bearer was challenged.
+2020-04-28 11:16:48.243 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2020-04-28 11:16:48.245 +08:00 [INF] AuthenticationScheme: BearerIdentityServerAuthenticationJwt was challenged.
+2020-04-28 11:16:48.245 +08:00 [INF] AuthenticationScheme: Bearer was challenged.
+2020-04-28 11:16:49.246 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2020-04-28 11:16:49.248 +08:00 [INF] AuthenticationScheme: BearerIdentityServerAuthenticationJwt was challenged.
+2020-04-28 11:16:49.248 +08:00 [INF] AuthenticationScheme: Bearer was challenged.
+2020-04-28 11:16:49.614 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2020-04-28 11:16:49.616 +08:00 [INF] AuthenticationScheme: BearerIdentityServerAuthenticationJwt was challenged.
+2020-04-28 11:16:49.616 +08:00 [INF] AuthenticationScheme: Bearer was challenged.
+2020-04-28 11:17:39.759 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2020-04-28 11:17:39.760 +08:00 [INF] AuthenticationScheme: BearerIdentityServerAuthenticationJwt was challenged.
+2020-04-28 11:17:39.761 +08:00 [INF] AuthenticationScheme: Bearer was challenged.
+2020-04-28 11:19:43.805 +08:00 [INF] Successfully validated the token.
+2020-04-28 11:19:43.808 +08:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2020-04-28 11:22:28.436 +08:00 [INF] Successfully validated the token.
+2020-04-28 11:22:28.436 +08:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2020-04-28 11:27:35.319 +08:00 [INF] Successfully validated the token.
+2020-04-28 11:27:35.320 +08:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2020-04-28 11:27:49.832 +08:00 [INF] Successfully validated the token.
+2020-04-28 11:27:49.832 +08:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2020-04-28 11:28:07.266 +08:00 [INF] Successfully validated the token.
+2020-04-28 11:28:07.266 +08:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2020-04-28 11:29:26.377 +08:00 [INF] Successfully validated the token.
+2020-04-28 11:29:26.378 +08:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2020-04-28 11:30:53.944 +08:00 [INF] Successfully validated the token.
+2020-04-28 11:30:53.944 +08:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2020-04-28 11:52:04.445 +08:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo: '[PII is hidden]', Current time: '[PII is hidden]'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateTokenPayload(JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+2020-04-28 11:52:04.464 +08:00 [INF] BearerIdentityServerAuthenticationJwt was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo: '[PII is hidden]', Current time: '[PII is hidden]'.
+2020-04-28 11:52:04.464 +08:00 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo: '[PII is hidden]', Current time: '[PII is hidden]'.
+2020-04-28 11:52:04.466 +08:00 [INF] AuthenticationScheme: BearerIdentityServerAuthenticationJwt was challenged.
+2020-04-28 11:52:04.466 +08:00 [INF] AuthenticationScheme: Bearer was challenged.
+2020-04-28 11:52:55.886 +08:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo: '[PII is hidden]', Current time: '[PII is hidden]'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateTokenPayload(JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+2020-04-28 11:52:55.887 +08:00 [INF] BearerIdentityServerAuthenticationJwt was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo: '[PII is hidden]', Current time: '[PII is hidden]'.
+2020-04-28 11:52:55.887 +08:00 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo: '[PII is hidden]', Current time: '[PII is hidden]'.
+2020-04-28 11:52:55.888 +08:00 [INF] AuthenticationScheme: BearerIdentityServerAuthenticationJwt was challenged.
+2020-04-28 11:52:55.888 +08:00 [INF] AuthenticationScheme: Bearer was challenged.
+2020-04-28 12:14:00.960 +08:00 [INF] Successfully validated the token.
+2020-04-28 12:14:00.982 +08:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2020-04-28 12:14:38.841 +08:00 [INF] Successfully validated the token.
+2020-04-28 12:14:38.862 +08:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2020-04-28 12:14:40.775 +08:00 [INF] Successfully validated the token.
+2020-04-28 12:14:40.775 +08:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.

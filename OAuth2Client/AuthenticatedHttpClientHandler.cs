@@ -35,14 +35,14 @@ namespace OAuth2Client
                     {
                         TokenResponse = await InternalHttpClient.RequestPasswordTokenAsync(passwordTokenRequest);
                     }
-                    else if (TokenRequest is AuthorizationCodeTokenRequest authorizationCodeTokenRequest)
-                    {
-                        TokenResponse = await InternalHttpClient.RequestAuthorizationCodeTokenAsync(authorizationCodeTokenRequest);
-                    }
-                    else if (TokenRequest is DeviceTokenRequest deviceTokenRequest)
-                    {
-                        TokenResponse = await InternalHttpClient.RequestDeviceTokenAsync(deviceTokenRequest);
-                    }
+                    //else if (TokenRequest is AuthorizationCodeTokenRequest authorizationCodeTokenRequest)
+                    //{
+                    //    TokenResponse = await InternalHttpClient.RequestAuthorizationCodeTokenAsync(authorizationCodeTokenRequest);
+                    //}
+                    //else if (TokenRequest is DeviceTokenRequest deviceTokenRequest)
+                    //{
+                    //    TokenResponse = await InternalHttpClient.RequestDeviceTokenAsync(deviceTokenRequest);
+                    //}
                     else
                     {
                         throw new Exception($"Invalid TokenRequest {Newtonsoft.Json.JsonConvert.SerializeObject(TokenRequest)}");
@@ -59,6 +59,13 @@ namespace OAuth2Client
                         ClientSecret = TokenRequest.ClientSecret
                     });
                 }
+
+                if (TokenResponse.IsError)
+                {
+                    throw new Exception(TokenResponse.Error);
+                }
+
+                TokenExpiredDateTime = DateTime.Now.AddSeconds(TokenResponse.ExpiresIn);
             }
             finally
             {
@@ -70,7 +77,6 @@ namespace OAuth2Client
         };
 
         protected AuthenticatedHttpClientHandler(IHttpClientFactory httpClientFactory)
-            : base(new HttpClientHandler())
         {
             InternalHttpClient = httpClientFactory.CreateClient(nameof(AuthenticatedHttpClientHandler));
         }
@@ -79,10 +85,13 @@ namespace OAuth2Client
         {
             // See if the request has an authorize header
             var auth = request.Headers.Authorization;
-            if (auth != null)
+            if (auth != null && string.IsNullOrWhiteSpace(auth.Parameter))
             {
                 var token = await GetToken(request).ConfigureAwait(false);
-                request.Headers.Authorization = new AuthenticationHeaderValue(auth.Scheme, token);
+                if (!string.IsNullOrWhiteSpace(token))
+                {
+                    request.Headers.Authorization = new AuthenticationHeaderValue(auth.Scheme, token);
+                }
             }
 
             return await base.SendAsync(request, cancellationToken).ConfigureAwait(false);

@@ -211,7 +211,7 @@ namespace IdentityServerAspNetIdentity
                     ClientId = "mvc",
                     ClientName = "MVC Client",
                     RequireConsent = false,
-                    AllowedGrantTypes = GrantTypes.Hybrid,
+                    AllowedGrantTypes = GrantTypes.HybridAndClientCredentials,
                     ClientSecrets = {new Secret("secret".Sha256())},
                     RedirectUris = {"http://localhost:5002/signin-oidc"},
                     PostLogoutRedirectUris = {"http://localhost:5002/signout-callback-oidc"},
@@ -223,7 +223,8 @@ namespace IdentityServerAspNetIdentity
                         JwtClaimTypes.Role,
                         "api1",
                         "api2",
-                        adminConfiguration.IdentityAdminApiScope
+                        adminConfiguration.IdentityAdminApiScope,
+                        IdentityServerConstants.StandardScopes.OfflineAccess
                     },
                     AllowOfflineAccess = true
                 },

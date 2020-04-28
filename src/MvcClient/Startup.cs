@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using IdentityModel;
 using Microsoft.AspNetCore.Authentication.OAuth.Claims;
 using Microsoft.AspNetCore.Authentication.OpenIdConnect;
+using Microsoft.AspNetCore.Mvc.Infrastructure;
 using Microsoft.IdentityModel.Logging;
 using MvcClient.Model;
 using Newtonsoft.Json;
@@ -27,7 +28,11 @@ namespace MvcClient
             JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Clear();
 
 
-            //services.AddOAuth2Client<>()
+            services.AddClientCredentialsClient<IApi>("http://localhost:5001",
+                                                      "http://localhost:5000/connect/token",
+                                                      "mvc",
+                                                      "secret",
+                                                      "api1");
 
             services.AddAuthentication(options =>
                 {
