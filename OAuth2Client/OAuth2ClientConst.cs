@@ -10,7 +10,7 @@ namespace OAuth2Client
     {
         public const string NoneBearerToken = "Bearer";
 
-        public static async Task RefreshTokenOnValidate(string address, string clientId, string clientSecret, CookieValidatePrincipalContext x)
+        public static async Task RefreshTokenOnValidate(string tokenEndpoint, string clientId, string clientSecret, CookieValidatePrincipalContext x)
         {
             var items = x.Properties.Items;
             var tokenExpireAt = DateTimeOffset.MaxValue;
@@ -31,7 +31,7 @@ namespace OAuth2Client
                 // new access token and refresh token
                 var response = await new HttpClient().RequestRefreshTokenAsync(new RefreshTokenRequest
                 {
-                    Address = address,
+                    Address = tokenEndpoint,
                     ClientId = clientId,
                     ClientSecret = clientSecret,
                     RefreshToken = refreshToken
