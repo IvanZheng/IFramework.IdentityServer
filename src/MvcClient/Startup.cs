@@ -22,7 +22,6 @@ namespace MvcClient
 
             JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Clear();
 
-
             services.AddClientCredentialsClient<IApi>("http://localhost:5001",
                                                       "http://localhost:5000/connect/token",
                                                       "mvc",

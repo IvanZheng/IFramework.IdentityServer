@@ -37,6 +37,25 @@ namespace OAuth2Client
             return services.AddOAuth2Client<TService>(address, p => tokenRequest, refreshTokenBeforeTotalSeconds, settings);
         }
 
+
+        public static IHttpClientBuilder AddOAuth2Client<TService>(this IServiceCollection services,
+                                                                   Action<IServiceProvider, HttpClient> configHttpClient,
+                                                                   Func<IServiceProvider, TokenRequest> getTokenRequest,
+                                                                   int refreshTokenBeforeTotalSeconds = 60,
+                                                                   RefitSettings settings = null)
+            where TService : class
+        {
+            return services.AddRefitClient<TService>(settings)
+                           .ConfigureHttpClient(configHttpClient)
+                           .AddHttpMessageHandler(p =>
+                           {
+                               var tokenRequest = getTokenRequest(p);
+                               return new DefaultAuthenticatedHttpClientHandler(tokenRequest,
+                                                                                p.GetService<IHttpClientFactory>(),
+                                                                                refreshTokenBeforeTotalSeconds);
+                           });
+        }
+
         public static IHttpClientBuilder AddOAuth2Client<TService>(this IServiceCollection services,
                                                                    string address,
                                                                    Func<IServiceProvider, TokenRequest> getTokenRequest,
